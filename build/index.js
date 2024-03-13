@@ -22,7 +22,6 @@ function parse(contents, options = {}) {
     ...cheerioOptions,
   });
   $.findNodes = function (q) {
-    console.log("q", q);
     return $(Array.isArray(q) ? q.join(",") : q)
       .not("[heml-ignore]")
       .toNodes();
@@ -42,6 +41,7 @@ function parse(contents, options = {}) {
       .filter((element) => element.children !== false)
       .map(({ tagName }) => tagName),
   ];
+
   const $selfClosingNodes = $.findNodes(selfClosingTags).reverse();
   const $wrappingNodes = $.findNodes(wrappingTags).reverse();
 
