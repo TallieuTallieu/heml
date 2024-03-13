@@ -2,7 +2,7 @@ import parse from '@heml/parse';
 import render from '@heml/render';
 import inline from '@heml/inline';
 import validate from '@heml/validate';
-import { condition } from '@heml/utils';
+import utils from '@heml/utils';
 import byteLength from 'byte-length';
 import beautify from 'js-beautify';
 import lodash from 'lodash';
@@ -44,7 +44,7 @@ async function heml(contents, options = {}) {
   inline($html, options);
 
   /** beautify it 💅 */
-  results.html = condition.replace(beautify.html($html.html(), {
+  results.html = utils.condition.replace(beautify.html($html.html(), {
     indent_size: 2,
     indent_inner_html: true,
     preserve_newlines: false,
