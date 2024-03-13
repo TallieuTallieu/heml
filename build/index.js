@@ -5,7 +5,7 @@ import validate from '@heml/validate';
 import { condition } from '@heml/utils';
 import byteLength from 'byte-length';
 import beautify from 'js-beautify';
-import { toArray, flattenDeep } from 'lodash';
+import lodash from 'lodash';
 import * as coreElements from '@heml/elements';
 
 /**
@@ -20,7 +20,7 @@ async function heml(contents, options = {}) {
     beautify: beautifyOptions = {},
     validate: validateOption = 'soft'
   } = options;
-  options.elements = flattenDeep(toArray(coreElements).concat(options.elements || []));
+  options.elements = lodash.flattenDeep(lodash.toArray(coreElements).concat(options.elements || []));
 
   /** parse it ✂️ */
   const $heml = parse(contents, options);
