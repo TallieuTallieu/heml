@@ -9,7 +9,7 @@ import * as coreElements from '@heml/elements';
 import { load } from 'cheerio';
 import randomString from 'crypto-random-string';
 import htmlTags from 'html-tags';
-import selfClosingHtmlTags from 'html-tags/void';
+import selfClosingHtmlTags from 'html-tags/void.js';
 
 const wrappingHtmlTags = lodash.difference(htmlTags, selfClosingHtmlTags);
 
