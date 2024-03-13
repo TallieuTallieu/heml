@@ -4,7 +4,7 @@ import inline from '@heml/inline';
 import validate from '@heml/validate';
 import { condition } from '@heml/utils';
 import byteLength from 'byte-length';
-import { html as beautify } from 'js-beautify';
+import beautify from 'js-beautify';
 import { toArray, flattenDeep } from 'lodash';
 import * as coreElements from '@heml/elements';
 
@@ -44,7 +44,7 @@ async function heml(contents, options = {}) {
   inline($html, options);
 
   /** beautify it 💅 */
-  results.html = condition.replace(beautify($html.html(), {
+  results.html = condition.replace(beautify.html($html.html(), {
     indent_size: 2,
     indent_inner_html: true,
     preserve_newlines: false,
