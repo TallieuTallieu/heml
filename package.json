@@ -40,6 +40,9 @@
     "lodash": "^4.17.4",
     "log-update": "^2.1.0",
     "open": "0.0.5",
+    "cheerio": "^1.0.0-rc.2",
+    "crypto-random-string": "^1.0.0",
+    "html-tags": "^2.0.0",
     "reload": "^2.2.2"
   }
 }
