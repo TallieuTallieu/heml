@@ -15,10 +15,10 @@
   },
   "author": "SparkPost <dev-relations@sparkpost.com> (https://sparkpost.com)",
   "files": [
-    "build/"
+    "src/"
   ],
-  "main": "build/index.js",
-  "bin": "build/bin/heml.js",
+  "main": "src/index.js",
+  "bin": "src/bin/heml.js",
   "dependencies": {
     "@heml/elements": "https://github.com/TallieuTallieu/heml-elements",
     "@heml/inline": "^1.1.2",
