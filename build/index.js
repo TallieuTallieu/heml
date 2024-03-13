@@ -22,6 +22,8 @@ function parse(contents, options = {}) {
     ...cheerioOptions,
   });
   $.findNodes = function (q) {
+        console.log({q});
+        return $('heml').toNodes();
     return $(Array.isArray(q) ? q.join(",") : q)
       .not("[heml-ignore]")
       .toNodes();
