@@ -1,6 +1,9 @@
+.yarn
 .DS_Store
 node_modules
 build/
 .env
 *.log
 testing/
+
+.wakatime-project

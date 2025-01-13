@@ -1,53 +1,54 @@
-'use strict'
-// Inspired by https://github.com/babel/minify/blob/master/gulpfile.babel.js
+"use strict";
 
-const del = require('del')
-const through = require('through2')
-const newer = require('gulp-newer')
-const babel = require('gulp-babel')
-const util = require('gulp-util')
-const plumber = require('gulp-plumber')
-const gulp = require('gulp')
-const path = require('path')
-const { cyan } = util.colors
+import { deleteSync } from "del";
+import { obj } from "through2";
+import newer from "gulp-newer";
+import babel from "gulp-babel";
+import plumber from "gulp-plumber";
+import gulp from "gulp";
+import path, { win32 } from "path";
 
-const scripts = './packages/*/src/**/*.js'
-const builds = './packages/*/build'
-const dest = 'packages'
+const scripts = "./packages/*/src/**/*.js";
+const builds = "./packages/*/build";
+const dest = "packages";
 
-let srcEx, libFragment
+let srcEx, libFragment;
 
-if (path.win32 === path) {
-  srcEx = /(packages\\[^\\]+)\\src\\/
-  libFragment = '$1\\build\\'
+if (win32 === path) {
+  srcEx = /(packages\\[^\\]+)\\src\\/;
+  libFragment = "$1\\build\\";
 } else {
-  srcEx = new RegExp('(packages/[^/]+)/src/')
-  libFragment = '$1/build/'
+  srcEx = new RegExp("(packages/[^/]+)/src/");
+  libFragment = "$1/build/";
 }
 
-function build () {
+export function build() {
   return gulp
     .src(scripts)
     .pipe(plumber())
-    .pipe(through.obj((file, enc, callback) => {
-      file._path = file.path
-      file.path = file.path.replace(srcEx, libFragment)
-      callback(null, file)
-    }))
+    .pipe(
+      obj((file, enc, callback) => {
+        file._path = file.path;
+        file.path = file.path.replace(srcEx, libFragment);
+        callback(null, file);
+      }),
+    )
     .pipe(newer(dest))
-    .pipe(babel())
+    .pipe(
+      babel({
+        presets: ["@babel/env", "@babel/react"],
+      }),
+    )
     .pipe(gulp.dest(dest))
-    .on('end', () => {
-      util.log(`Finished '${cyan('build')}'`)
-    })
+    .on("end", () => {
+      console.log(`Finished build`);
+    });
 }
 
-gulp.task('build', build)
+export function watch() {
+  gulp.watch(scripts, { debounceDelay: 200 }, build);
+}
 
-gulp.task('watch', ['build'], function () {
-  gulp.watch(scripts, { debounceDelay: 200 }, build)
-})
-
-gulp.task('clean', () => {
-  return del(builds)
-})
+export function clean() {
+  return deleteSync(builds);
+}
