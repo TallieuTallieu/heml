@@ -15,7 +15,7 @@ build:
 	@echo "$(Green)Building done$(NC)"
 .PHONY: build
 
-publish: build publish-heml-render
+publish: build publish-heml-render publish-heml-styles publish-heml-utils publish-heml-validate publish-heml-parse publish-heml-inline publish-heml-elements publish-heml
 	@echo "$(Green)Publishing$(NC)"
 .PHONY: publish
 
