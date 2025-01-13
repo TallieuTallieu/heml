@@ -16,14 +16,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tallieu_tallieu/heml-utils@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@tallieu_tallieu/heml-utils@npm:1.0.0"
+"@tallieu_tallieu/heml-utils@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@tallieu_tallieu/heml-utils@npm:1.0.3"
   dependencies:
     "@tallieu_tallieu/heml-render": "npm:^1.0.1"
     css-groups: "npm:^0.1.1"
-    lodash: "npm:^4.17.4"
-  checksum: 10c0/d0d6195ca4f3c8d3b94e40cea64f77cb61ee8a58e906504cd1c4eeff68af31b8e399a4886a50d55d32502c3962cd55f1392d233c58cce6e51a7fc40c8e59458f
+    lodash: "npm:^4.17.21"
+  checksum: 10c0/a5d74c479aeb4604ba0839ca1c0ff8542ab816c9bc6f56e5b414668fd96b63098007425906a309823feb2d97ac9547729302e9a523edf67aed2b55d3cb6e4f46
   languageName: node
   linkType: hard
 
@@ -31,7 +31,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tallieu_tallieu/heml-validate@workspace:."
   dependencies:
-    "@tallieu_tallieu/heml-utils": "npm:^1.0.0"
+    "@tallieu_tallieu/heml-utils": "npm:^1.0.3"
     lodash: "npm:^4.17.21"
   languageName: unknown
   linkType: soft
@@ -57,7 +57,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.21, lodash@npm:^4.17.4":
+"lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: 10c0/d8cbea072bb08655bb4c989da418994b073a608dffa608b09ac04b43a791b12aeae7cd7ad919aa4c925f33b48490b5cfe6c1f71d827956071dae2e7bb3a6b74c

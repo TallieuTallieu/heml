@@ -5,14 +5,14 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@tallieu_tallieu/heml-render@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@tallieu_tallieu/heml-render@npm:1.0.1"
+"@tallieu_tallieu/heml-render@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "@tallieu_tallieu/heml-render@npm:1.0.4"
   dependencies:
     html-tags: "npm:^4.0.0"
     is-promise: "npm:^4.0.0"
     lodash: "npm:^4.17.21"
-  checksum: 10c0/b230f49cfdb7cf9b63c78a7d358007120f9e1b218e68b2f3bcbcb1e7e1ccbc32f178b7130b3bd32d0570e9f0da1e8487efbc78a227c2961d9360c80f3e8545e0
+  checksum: 10c0/41d2614dfe1696ae934ad01ac11ec0ee6dcf972fbca1c82dbf303c7bb895b864d799589dc35bfcf33eb851166b64cca328321fba4e22c675058a49b0e49f7850
   languageName: node
   linkType: hard
 
@@ -20,7 +20,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tallieu_tallieu/heml-utils@workspace:."
   dependencies:
-    "@tallieu_tallieu/heml-render": "npm:^1.0.1"
+    "@tallieu_tallieu/heml-render": "npm:^1.0.4"
     css-groups: "npm:^0.1.1"
     lodash: "npm:^4.17.21"
   languageName: unknown

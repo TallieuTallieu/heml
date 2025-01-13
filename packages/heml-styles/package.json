@@ -1,6 +1,6 @@
 {
   "name": "@tallieu_tallieu/heml-styles",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "description": "FORK: CSS processor for HEML",
   "keywords": [
@@ -24,7 +24,7 @@
   "dependencies": {
     "css-declaration-sorter": "^2.1.0",
     "css-shorthand-expand": "^1.1.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "postcss": "^6.0.13",
     "postcss-calc": "^6.0.1",
     "postcss-color-rgba-fallback": "^3.0.0",

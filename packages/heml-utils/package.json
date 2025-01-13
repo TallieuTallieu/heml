@@ -1,6 +1,6 @@
 {
   "name": "@tallieu_tallieu/heml-utils",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "description": "FORK: A collection of utilities for HEML",
   "keywords": [
@@ -22,7 +22,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@tallieu_tallieu/heml-render": "^1.0.1",
+    "@tallieu_tallieu/heml-render": "^1.0.4",
     "css-groups": "^0.1.1",
     "lodash": "^4.17.21"
   }
