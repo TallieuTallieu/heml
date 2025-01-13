@@ -34,11 +34,11 @@ export function build() {
       }),
     )
     .pipe(newer(dest))
-    .pipe(
-      babel({
-        presets: ["@babel/env", "@babel/react"],
-      }),
-    )
+    //.pipe(
+    //  babel({
+    //    presets: ["@babel/env", "@babel/react"],
+    //  }),
+    //)
     .pipe(gulp.dest(dest))
     .on("end", () => {
       console.log(`Finished build`);
