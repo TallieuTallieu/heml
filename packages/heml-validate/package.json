@@ -1,6 +1,6 @@
 {
   "name": "@tallieu_tallieu/heml-validate",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "module",
   "description": "FORK: Validator for HEML",
   "keywords": [
