@@ -2,13 +2,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "lint": "standard 'packages/**/src/**/*.js' 'test/**/*.js' --fix",
-    "test": "npm run bootstrap && npm run build && npm run lint && jest ./test/*.spec.js",
-    "bootstrap": "npm install && lerna bootstrap",
-    "clean": "gulp clean && lerna clean --yes",
     "build": "gulp build",
-    "watch": "gulp watch",
-    "publish": "npm run clean && npm test && lerna publish"
+    "watch": "gulp watch"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
@@ -17,23 +12,7 @@
     "del": "^8.0.0",
     "gulp": "^5.0.0",
     "gulp-babel": "^8.0.0",
-    "gulp-newer": "^1.4.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-util": "^3.0.8",
-    "require-all": "^3.0.0",
-    "standard": "^17.1.2",
     "through2": "^4.0.2"
-  },
-  "standard": {
-    "globals": [
-      "afterAll",
-      "afterEach",
-      "beforeAll",
-      "beforeEach",
-      "describe",
-      "expect",
-      "test"
-    ]
   },
   "packageManager": "yarn@4.6.0"
 }

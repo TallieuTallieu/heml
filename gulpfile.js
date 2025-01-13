@@ -3,7 +3,6 @@
 import { deleteSync } from "del";
 import { obj } from "through2";
 import babel from "gulp-babel";
-import plumber from "gulp-plumber";
 import gulp from "gulp";
 import path, { win32 } from "path";
 
@@ -22,26 +21,29 @@ if (win32 === path) {
 }
 
 export function build() {
-  return gulp
-    .src(scripts)
-    .pipe(plumber())
-    .pipe(
-      obj((file, enc, callback) => {
-        file._path = file.path;
-        file.path = file.path.replace(srcEx, libFragment);
-        callback(null, file);
-      }),
-    )
-    //.pipe(newer(dest))
-    .pipe(
-      babel({
-        presets: [["@babel/env", { targets: { node: 20 }, modules: false }], "@babel/react"],
-      }),
-    )
-    .pipe(gulp.dest(dest))
-    .on("end", () => {
-      console.log(`Finished build`);
-    });
+  return (
+    gulp
+      .src(scripts)
+      .pipe(
+        obj((file, enc, callback) => {
+          file._path = file.path;
+          file.path = file.path.replace(srcEx, libFragment);
+          callback(null, file);
+        }),
+      )
+      .pipe(
+        babel({
+          presets: [
+            ["@babel/env", { targets: { node: 20 }, modules: false }],
+            "@babel/react",
+          ],
+        }),
+      )
+      .pipe(gulp.dest(dest))
+      .on("end", () => {
+        console.log(`Finished build`);
+      })
+  );
 }
 
 export function watch() {
