@@ -34,7 +34,7 @@ export function build() {
       .pipe(
         babel({
           presets: [
-            ["@babel/env", { targets: { node: 20 }, modules: false }],
+            ["@babel/env", { targets: { node: 18 }}],
             "@babel/react",
           ],
         }),
