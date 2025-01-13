@@ -1,8 +1,7 @@
 {
   "name": "@tallieu_tallieu/heml-elements",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Core elements for HEML",
-  "type": "module",
   "keywords": [
     "heml"
   ],
@@ -22,8 +21,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@tallieu_tallieu/heml-styles": "^1.0.4",
-    "@tallieu_tallieu/heml-utils": "^1.0.5",
+    "@tallieu_tallieu/heml-styles": "^1.0.5",
+    "@tallieu_tallieu/heml-utils": "^1.0.6",
     "axios": "^1.7.9",
     "image-size": "^1.2.0",
     "is-absolute-url": "^4.0.1",

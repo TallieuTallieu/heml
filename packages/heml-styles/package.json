@@ -1,7 +1,6 @@
 {
   "name": "@tallieu_tallieu/heml-styles",
-  "version": "1.0.5",
-  "type": "module",
+  "version": "1.0.6",
   "description": "FORK: CSS processor for HEML",
   "keywords": [
     "heml"

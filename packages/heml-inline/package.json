@@ -1,7 +1,6 @@
 {
   "name": "@tallieu_tallieu/heml-inline",
-  "version": "1.0.6",
-  "type": "module",
+  "version": "1.0.7",
   "description": "FORK: CSS inliner for HEML",
   "keywords": [
     "heml"

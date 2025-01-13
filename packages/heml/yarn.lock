@@ -64,50 +64,39 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tallieu_tallieu/heml-elements@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "@tallieu_tallieu/heml-elements@npm:1.0.5"
+"@tallieu_tallieu/heml-elements@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@tallieu_tallieu/heml-elements@npm:1.0.6"
   dependencies:
-    "@tallieu_tallieu/heml-styles": "npm:^1.0.3"
-    "@tallieu_tallieu/heml-utils": "npm:^1.0.4"
+    "@tallieu_tallieu/heml-styles": "npm:^1.0.4"
+    "@tallieu_tallieu/heml-utils": "npm:^1.0.5"
     axios: "npm:^1.7.9"
     image-size: "npm:^1.2.0"
     is-absolute-url: "npm:^4.0.1"
     lodash: "npm:^4.17.21"
-  checksum: 10c0/8d22683a8afe70c9095c236883a1569361e2c625d908aa9e5632e4adef60de926fc707f00477117b57b716639553515c3b94a2fa2b1a2cabeac334688de2c105
+  checksum: 10c0/6a0d9b4d24801c6b4a5388b0c8cf1af72654c8ebc9241d32ea36063d5418f30b1ff89fd0240379577d076c5eb1f7af87a8734bd185ecf5ca59b158e0ab9f7a38
   languageName: node
   linkType: hard
 
-"@tallieu_tallieu/heml-inline@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "@tallieu_tallieu/heml-inline@npm:1.0.5"
+"@tallieu_tallieu/heml-inline@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@tallieu_tallieu/heml-inline@npm:1.0.6"
   dependencies:
     juice: "npm:^11.0.0"
     lodash: "npm:^4.17.21"
-  checksum: 10c0/e3d6c2c64df0d75bdd5c07586732ab5dc9a305fbd2d32ba998a4bcf1856475906b2182d395f775207bbf6bc5a94c1eadc4dd636e345b2e87c1f39309bf705dd7
+  checksum: 10c0/8026fe9f7f4fc6302f2b1507094c3f9e9abafc5bc08a819f616d1bceefe948c9fc88e41f7a8afc9140a469e2de59a2b007d1aa9f939643620ef5144462a6a994
   languageName: node
   linkType: hard
 
-"@tallieu_tallieu/heml-parse@npm:^1.0.6":
-  version: 1.0.6
-  resolution: "@tallieu_tallieu/heml-parse@npm:1.0.6"
+"@tallieu_tallieu/heml-parse@npm:^1.0.7":
+  version: 1.0.7
+  resolution: "@tallieu_tallieu/heml-parse@npm:1.0.7"
   dependencies:
     cheerio: "npm:^1.0.0"
     crypto-random-string: "npm:^5.0.0"
     html-tags: "npm:^4.0.0"
     lodash: "npm:^4.17.21"
-  checksum: 10c0/590594f29bd1f7a48464b668e8edfb549ea080691cc5de1793ee3cc00884ceff4f664009f866cfd9621bb712f0b04664147ccf2cae236da83c98175e7e37ce18
-  languageName: node
-  linkType: hard
-
-"@tallieu_tallieu/heml-render@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "@tallieu_tallieu/heml-render@npm:1.0.4"
-  dependencies:
-    html-tags: "npm:^4.0.0"
-    is-promise: "npm:^4.0.0"
-    lodash: "npm:^4.17.21"
-  checksum: 10c0/41d2614dfe1696ae934ad01ac11ec0ee6dcf972fbca1c82dbf303c7bb895b864d799589dc35bfcf33eb851166b64cca328321fba4e22c675058a49b0e49f7850
+  checksum: 10c0/f23a4a015c6d8c23b80b736849753defbc1d7c82cccb10a949f16d03d849f148490be2ea34b7a116ee0a0ef415e519bd7eb28fc814ad9204be43110ba90caeb5
   languageName: node
   linkType: hard
 
@@ -133,9 +122,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tallieu_tallieu/heml-styles@npm:^1.0.3":
-  version: 1.0.4
-  resolution: "@tallieu_tallieu/heml-styles@npm:1.0.4"
+"@tallieu_tallieu/heml-render@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "@tallieu_tallieu/heml-render@npm:1.0.8"
+  dependencies:
+    html-tags: "npm:^4.0.0"
+    is-promise: "npm:^4.0.0"
+    lodash: "npm:^4.17.21"
+  checksum: 10c0/196270860409268aaa39cefe5c7c71638ef875a6685cb8377cdc55a313b5861ad92327d4cda10f73cfd7cb3fb7be8dc410eca6fd56ede8114fd8b3da3fa1d5b7
+  languageName: node
+  linkType: hard
+
+"@tallieu_tallieu/heml-styles@npm:^1.0.4":
+  version: 1.0.5
+  resolution: "@tallieu_tallieu/heml-styles@npm:1.0.5"
   dependencies:
     css-declaration-sorter: "npm:^2.1.0"
     css-shorthand-expand: "npm:^1.1.0"
@@ -167,18 +167,7 @@ __metadata:
     postcss-safe-parser: "npm:^3.0.1"
     postcss-shorthand-expand: "npm:^1.0.1"
     postcss-unique-selectors: "npm:^2.0.2"
-  checksum: 10c0/1b248990fb9af0f0e11a77ec4965148161dd69191d3442307b2fb10bc4e3591d1a471624afdff77fc3dc9486b1b87cf3d1896bd6f65ad4c612cdf0c7aaa8a06b
-  languageName: node
-  linkType: hard
-
-"@tallieu_tallieu/heml-utils@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "@tallieu_tallieu/heml-utils@npm:1.0.4"
-  dependencies:
-    "@tallieu_tallieu/heml-render": "npm:^1.0.4"
-    css-groups: "npm:^0.1.1"
-    lodash: "npm:^4.17.21"
-  checksum: 10c0/d06aaffe2346b2e80599c7ed0ed3be6462b2578944f836deaac34f890cf536e72a87c814659d41199d8fe51bfe86e69fe7de72ed8d5dee852d961a96de707e2c
+  checksum: 10c0/34221b1d498225ac19bcfcd66453b99c8c39e5e1e0d61413293ad6422ce5e739d0652408885954df73cfeacd7a31c635ddf35ced0f2e55d9efc6a4d5b36c04bd
   languageName: node
   linkType: hard
 
@@ -193,13 +182,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tallieu_tallieu/heml-validate@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "@tallieu_tallieu/heml-validate@npm:1.0.5"
+"@tallieu_tallieu/heml-utils@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@tallieu_tallieu/heml-utils@npm:1.0.6"
   dependencies:
-    "@tallieu_tallieu/heml-utils": "npm:^1.0.4"
+    "@tallieu_tallieu/heml-render": "npm:^1.0.7"
+    css-groups: "npm:^0.1.1"
     lodash: "npm:^4.17.21"
-  checksum: 10c0/68de89a4ff929495187d3e99e5daca0fffd8d593bb476fe1c2d5b8bff3d34e805c92d7cab50536a68a431955061a53a68b1aeef28ba0e27b2c9aa2235deae12e
+  checksum: 10c0/7abc4d3c0d37d82eb24e72c323c630b1a65c70f421667a81ee28c203e672e64a5246fe206988a5caa4db8cbb97f323487a453e4f3d1c19798620fb74c1a24981
+  languageName: node
+  linkType: hard
+
+"@tallieu_tallieu/heml-validate@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@tallieu_tallieu/heml-validate@npm:1.0.6"
+  dependencies:
+    "@tallieu_tallieu/heml-utils": "npm:^1.0.5"
+    lodash: "npm:^4.17.21"
+  checksum: 10c0/8ad5f46bb4a7360a2f5abbf673d542153f504d967c33e9fff1d73dba9561e9a9aa50eef67e3d745d1cf5ec0b017c26148bc12ea01a3428a401067351c7a7fcec
   languageName: node
   linkType: hard
 
@@ -207,12 +207,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tallieu_tallieu/heml@workspace:."
   dependencies:
-    "@tallieu_tallieu/heml-elements": "npm:^1.0.5"
-    "@tallieu_tallieu/heml-inline": "npm:^1.0.5"
-    "@tallieu_tallieu/heml-parse": "npm:^1.0.6"
-    "@tallieu_tallieu/heml-render": "npm:^1.0.7"
-    "@tallieu_tallieu/heml-utils": "npm:^1.0.5"
-    "@tallieu_tallieu/heml-validate": "npm:^1.0.5"
+    "@tallieu_tallieu/heml-elements": "npm:^1.0.6"
+    "@tallieu_tallieu/heml-inline": "npm:^1.0.6"
+    "@tallieu_tallieu/heml-parse": "npm:^1.0.7"
+    "@tallieu_tallieu/heml-render": "npm:^1.0.8"
+    "@tallieu_tallieu/heml-utils": "npm:^1.0.6"
+    "@tallieu_tallieu/heml-validate": "npm:^1.0.6"
     babel-runtime: "npm:^6.26.0"
     boxen: "npm:^8.0.1"
     byte-length: "npm:^1.0.2"
