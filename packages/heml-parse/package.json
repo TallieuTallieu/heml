@@ -1,6 +1,6 @@
 {
   "name": "@tallieu_tallieu/heml-parse",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "description": "FORK: Parser for HEML",
   "keywords": [

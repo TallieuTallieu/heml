@@ -1,6 +1,6 @@
 {
   "name": "@tallieu_tallieu/heml-validate",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "description": "FORK: Validator for HEML",
   "keywords": [
@@ -22,7 +22,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@tallieu_tallieu/heml-utils": "^1.0.3",
+    "@tallieu_tallieu/heml-utils": "^1.0.4",
     "lodash": "^4.17.21"
   },
   "packageManager": "yarn@4.6.0"

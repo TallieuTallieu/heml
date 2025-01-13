@@ -66,3 +66,19 @@ publish-heml:
 	cd packages/heml && yarn npm publish --access=public
 	@echo "$(Green)Publishing heml done$(NC)"
 .PHONY: publish-heml
+
+bump-patch:
+	@find ./packages -name "package.json" -not -path "*/node_modules/*" -type f -execdir npm version patch --no-git-tag-version \;
+.PHONY: bump-patch
+
+bump-minor:
+	@find ./packages -name "package.json" -not -path "*/node_modules/*" -type f -execdir npm version minor --no-git-tag-version \;
+.PHONY: bump-minor
+
+bump-major:
+	@find ./packages -name "package.json" -not -path "*/node_modules/*" -type f -execdir npm version major --no-git-tag-version \;
+.PHONY: bump-major
+
+upgrade-packages:
+	@find ./packages -name "package.json" -not -path "*/node_modules/*" -type f -execdir yarn upgrade-interactive \;
+.PHONY: upgrade-packages
