@@ -1,18 +1,18 @@
 {
-  "name": "@heml/utils",
-  "version": "1.1.2",
-  "description": "A collection of utilities for HEML",
+  "name": "@tallieu_tallieu/heml-utils",
+  "version": "1.0.1",
+  "description": "FORK: A collection of utilities for HEML",
   "keywords": [
     "heml"
   ],
   "homepage": "https://heml.io",
-  "bugs": "https://github.com/SparkPost/heml/issues",
+  "bugs": "https://github.com/TallieuTallieu/heml/issues",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SparkPost/heml.git"
+    "url": "https://github.com/TallieuTallieu/heml.git"
   },
-  "author": "SparkPost <dev-relations@sparkpost.com> (https://sparkpost.com)",
+  "author": "Tallieu&Tallieu <dev@tnt.be> (https://tnt.be)",
   "files": [
     "build/"
   ],
@@ -21,8 +21,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@heml/render": "^1.1.2",
+    "@tallieu_tallieu/heml-render": "^1.0.1",
     "css-groups": "^0.1.1",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.21"
   }
 }
