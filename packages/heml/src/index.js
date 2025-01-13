@@ -1,12 +1,12 @@
 import parse from "@tallieu_tallieu/heml-parse";
 import render from "@tallieu_tallieu/heml-render";
-import inline from "@tallieu_talieu/heml-inline";
-import validate from "@tallieu_talieu/heml-validate";
-import { condition } from "@tallieu_talieu/heml-utils";
+import inline from "@tallieu_tallieu/heml-inline";
+import validate from "@tallieu_tallieu/heml-validate";
+import { condition } from "@tallieu_tallieu/heml-utils";
 import byteLength from "byte-length";
 import { html as beautify } from "js-beautify";
 import { toArray, flattenDeep } from "lodash";
-import * as coreElements from "@tallieu_talieu/heml-elements";
+import * as coreElements from "@tallieu_tallieu/heml-elements";
 
 /**
  * renders the given HEML string with the config provided
