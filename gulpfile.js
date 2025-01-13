@@ -1,6 +1,6 @@
 "use strict";
 
-import { deleteSync } from "del";
+import { deleteAsync } from "del";
 import { obj } from "through2";
 import babel from "gulp-babel";
 import gulp from "gulp";
@@ -51,5 +51,5 @@ export function watch() {
 }
 
 export function clean() {
-  return deleteSync(builds);
+  return deleteAsync(builds);
 }

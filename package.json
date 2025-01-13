@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "build": "gulp build",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "clean": "gulp clean"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",

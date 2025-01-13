@@ -11,7 +11,7 @@ NC=\033[0m
 
 build:
 	@echo "$(Green)Building$(NC)"
-	yarn build
+	yarn clean && yarn build
 	@echo "$(Green)Building done$(NC)"
 .PHONY: build
 
