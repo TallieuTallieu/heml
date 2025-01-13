@@ -1,44 +1,45 @@
 {
-  "name": "heml",
-  "version": "1.1.3",
-  "description": "HEML is an open source markup language for building responsive email",
+  "name": "@tallieu_tallieu/heml",
+  "version": "1.0.1",
+  "type": "module",
+  "description": "FORK: HEML is an open source markup language for building responsive email",
   "keywords": [
     "heml",
     "email"
   ],
   "homepage": "https://heml.io",
-  "bugs": "https://github.com/SparkPost/heml/issues",
+  "bugs": "https://github.com/TallieuTallieu/heml/issues",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SparkPost/heml.git"
+    "url": "https://github.com/TallieuTallieu/heml.git"
   },
-  "author": "SparkPost <dev-relations@sparkpost.com> (https://sparkpost.com)",
+  "author": "Tallieu&Tallieu <dev@tnt.be> (https://tnt.be)",
   "files": [
     "build/"
   ],
   "main": "build/index.js",
   "bin": "build/bin/heml.js",
   "dependencies": {
-    "@heml/elements": "^1.1.3",
-    "@heml/inline": "^1.1.2",
-    "@heml/parse": "^1.1.2",
-    "@heml/render": "^1.1.2",
-    "@heml/utils": "^1.1.2",
-    "@heml/validate": "^1.1.2",
+    "@tallieu_tallieu/heml-elements": "^1.0.1",
+    "@tallieu_tallieu/heml-inline": "^1.0.1",
+    "@tallieu_tallieu/heml-parse": "^1.0.1",
+    "@tallieu_tallieu/heml-render": "^1.0.1",
+    "@tallieu_tallieu/heml-utils": "^1.0.1",
+    "@tallieu_tallieu/heml-validate": "^1.0.1",
     "babel-runtime": "^6.26.0",
-    "boxen": "^1.2.1",
-    "byte-length": "^0.1.1",
-    "chalk": "^2.1.0",
-    "commander": "^2.11.0",
-    "express": "^4.16.2",
-    "fs-extra": "^4.0.2",
-    "gaze": "^1.1.2",
-    "get-port": "^3.2.0",
-    "js-beautify": "^1.7.4",
-    "lodash": "^4.17.4",
-    "log-update": "^2.1.0",
-    "open": "0.0.5",
-    "reload": "^2.2.2"
+    "boxen": "^8.0.1",
+    "byte-length": "^1.0.2",
+    "chalk": "^5.4.1",
+    "commander": "^2.20.3",
+    "express": "^4.21.2",
+    "fs-extra": "^11.2.0",
+    "gaze": "^1.1.3",
+    "get-port": "^7.1.0",
+    "js-beautify": "^1.15.1",
+    "lodash": "^4.17.21",
+    "log-update": "^6.1.0",
+    "open": "10.1.0",
+    "reload": "^3.3.0"
   }
 }

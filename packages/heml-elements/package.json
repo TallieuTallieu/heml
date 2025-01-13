@@ -1,18 +1,19 @@
 {
-  "name": "@heml/elements",
-  "version": "1.1.3",
+  "name": "@tallieu_tallieu/heml-elements",
+  "version": "1.0.2",
   "description": "Core elements for HEML",
+  "type": "module",
   "keywords": [
     "heml"
   ],
   "homepage": "https://heml.io",
-  "bugs": "https://github.com/SparkPost/heml/issues",
+  "bugs": "https://github.com/TallieuTallieu/heml/issues",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SparkPost/heml.git"
+    "url": "https://github.com/TallieuTallieu/heml.git"
   },
-  "author": "SparkPost <dev-relations@sparkpost.com> (https://sparkpost.com)",
+  "author": "Tallieu&Tallieu <dev@tnt.be> (https://tnt.be)",
   "files": [
     "build/"
   ],
@@ -21,11 +22,12 @@
     "access": "public"
   },
   "dependencies": {
-    "@heml/styles": "^1.1.2",
-    "@heml/utils": "^1.1.2",
-    "axios": "^0.17.0",
-    "image-size": "^0.6.1",
-    "is-absolute-url": "^2.1.0",
-    "lodash": "^4.17.4"
-  }
+    "@tallieu_tallieu/heml-styles": "^1.0.0",
+    "@tallieu_tallieu/heml-utils": "^1.0.1",
+    "axios": "^1.7.9",
+    "image-size": "^1.2.0",
+    "is-absolute-url": "^4.0.1",
+    "lodash": "^4.17.21"
+  },
+  "packageManager": "yarn@4.6.0"
 }

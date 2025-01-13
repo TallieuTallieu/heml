@@ -1,6 +1,7 @@
 {
   "name": "@tallieu_tallieu/heml-render",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "type": "module",
   "description": "FORK: Renderer for HEML",
   "keywords": [
     "heml"

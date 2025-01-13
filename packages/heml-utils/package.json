@@ -1,6 +1,7 @@
 {
   "name": "@tallieu_tallieu/heml-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "type": "module",
   "description": "FORK: A collection of utilities for HEML",
   "keywords": [
     "heml"

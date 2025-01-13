@@ -42,3 +42,27 @@ publish-heml-validate:
 	cd packages/heml-validate && yarn npm publish --access=public
 	@echo "$(Green)Publishing heml-validate done$(NC)"
 .PHONY: publish-heml-validate
+
+publish-heml-parse:
+	@echo "$(Green)Publishing heml-parse$(NC)"
+	cd packages/heml-parse && yarn npm publish --access=public
+	@echo "$(Green)Publishing heml-parse done$(NC)"
+.PHONY: publish-heml-parse
+
+publish-heml-inline:
+	@echo "$(Green)Publishing heml-inline$(NC)"
+	cd packages/heml-inline && yarn npm publish --access=public
+	@echo "$(Green)Publishing heml-inline done$(NC)"
+.PHONY: publish-heml-inline
+
+publish-heml-elements:
+	@echo "$(Green)Publishing heml-elements$(NC)"
+	cd packages/heml-elements && yarn npm publish --access=public
+	@echo "$(Green)Publishing heml-elements done$(NC)"
+.PHONY: publish-heml-elements
+
+publish-heml:
+	@echo "$(Green)Publishing hems$(NC)"
+	cd packages/heml && yarn npm publish --access=public
+	@echo "$(Green)Publishing heml done$(NC)"
+.PHONY: publish-heml
