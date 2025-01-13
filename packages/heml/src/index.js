@@ -57,4 +57,4 @@ async function heml (contents, options = {}) {
 }
 
 /** module.exports for commonjs */
-export default heml;
+module.exports = heml
