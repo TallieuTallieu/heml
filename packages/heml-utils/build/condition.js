@@ -1,3 +1,9 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 const parts = {
   'START_CONDITION': '<!--[if ',
   'END_CONDITION': ']>',
@@ -16,4 +22,4 @@ condition.replace = function (html) {
   }
   return html;
 };
-export default condition;
+var _default = exports.default = condition;

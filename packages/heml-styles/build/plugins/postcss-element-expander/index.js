@@ -1,11 +1,15 @@
 'use strict';
 
-import postcss from 'postcss';
-import coerceElements from './coerceElements';
-import tagAliasSelectors from './tagAliasSelectors';
-import findDirectElementSelectors from './findDirectElementSelectors';
-import { replaceElementTagMentions, replaceElementPseudoMentions, expandElementRule } from './expanders';
-
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _postcss = _interopRequireDefault(require("postcss"));
+var _coerceElements = _interopRequireDefault(require("./coerceElements"));
+var _tagAliasSelectors = _interopRequireDefault(require("./tagAliasSelectors"));
+var _findDirectElementSelectors = _interopRequireDefault(require("./findDirectElementSelectors"));
+var _expanders = require("./expanders");
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 /**
  * elements var looks like this before being coerced
  *
@@ -17,7 +21,6 @@ import { replaceElementTagMentions, replaceElementPseudoMentions, expandElementR
  *   ...
  * }
  */
-
 /**
  * aliases var looks like this
  *
@@ -26,18 +29,17 @@ import { replaceElementTagMentions, replaceElementPseudoMentions, expandElementR
  *   ...
  * }
  */
-
 /**
  * Convert CSS to match custom elements
  * @param  {Object} options.elements An object of elements that define how to
  *                                   split up the css for each element
  * @param  {[type]} options.$        A cheerio instance
  */
-export default postcss.plugin('postcss-element-expander', ({
+var _default = exports.default = _postcss.default.plugin('postcss-element-expander', ({
   elements,
   aliases
 }) => {
-  elements = coerceElements(elements);
+  elements = (0, _coerceElements.default)(elements);
   return (root, result) => {
     for (let element of elements) {
       /**
@@ -45,7 +47,7 @@ export default postcss.plugin('postcss-element-expander', ({
        * .i.e. #my-button that selects <button id="my-button">click me</button>
        */
       root.walkRules(rule => {
-        tagAliasSelectors(element, aliases[element.tag], rule);
+        (0, _tagAliasSelectors.default)(element, aliases[element.tag], rule);
       });
 
       /**
@@ -61,10 +63,10 @@ export default postcss.plugin('postcss-element-expander', ({
       root.walkRules(new RegExp(element.tag, 'i'), rule => {
         /** CASE 1 */
         /** grab all the selectors that target this element */
-        const elementSelectors = findDirectElementSelectors(element, rule.selector);
+        const elementSelectors = (0, _findDirectElementSelectors.default)(element, rule.selector);
 
         /** Create new rules to properly target the elements */
-        const expandedRules = expandElementRule(element, elementSelectors, rule);
+        const expandedRules = (0, _expanders.expandElementRule)(element, elementSelectors, rule);
         expandedRules.forEach(expandedRule => rule.before(expandedRule));
 
         /** remove the directly targeting selectors from the original rule */
@@ -75,11 +77,11 @@ export default postcss.plugin('postcss-element-expander', ({
 
         /** CASE 2 */
         /** Replace all mentions of the element pseudo elements */
-        rule.selector = replaceElementPseudoMentions(element, rule.selector);
+        rule.selector = (0, _expanders.replaceElementPseudoMentions)(element, rule.selector);
 
         /** CASE 3 */
         /** Replace all mentions of the element tag */
-        rule.selector = replaceElementTagMentions(element, rule.selector);
+        rule.selector = (0, _expanders.replaceElementTagMentions)(element, rule.selector);
       });
     }
   };

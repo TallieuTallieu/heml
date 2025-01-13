@@ -1,14 +1,23 @@
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import HEML, { createElement, transforms, cssGroups } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
-import Style from './Style';
-import Preview from './Preview';
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _hemlUtils = _interopRequireWildcard(require("@tallieu_tallieu/heml-utils"));
+var _Style = _interopRequireDefault(require("./Style"));
+var _Preview = _interopRequireDefault(require("./Preview"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); } // eslint-disable-line no-unused-vars
 const {
   background,
   padding,
   font,
   text
-} = cssGroups;
-export default createElement('body', {
+} = _hemlUtils.cssGroups;
+var _default = exports.default = (0, _hemlUtils.createElement)('body', {
   unique: true,
   parent: ['heml'],
   containsText: true,
@@ -23,14 +32,14 @@ export default createElement('body', {
       '@pseudo': 'content'
     }, padding, font, text],
     '.preview': [{
-      'background-color': transforms.convertProp('color')
+      'background-color': _hemlUtils.transforms.convertProp('color')
     }]
   },
   async render(attrs, contents) {
     attrs.class += ' body';
     return /*#__PURE__*/React.createElement("body", _extends({}, attrs, {
       style: "margin: 0; width: 100%;"
-    }), Preview.flush(), /*#__PURE__*/React.createElement("table", {
+    }), _Preview.default.flush(), /*#__PURE__*/React.createElement("table", {
       class: "bodyTable",
       role: "presentation",
       width: "100%",
@@ -46,7 +55,7 @@ export default createElement('body', {
       valign: "top"
     }, contents))), /*#__PURE__*/React.createElement("div", {
       style: "display:none; white-space:nowrap; font-size:15px; line-height:0;"
-    }, '&nbsp; '.repeat(30)), /*#__PURE__*/React.createElement(Style, {
+    }, '&nbsp; '.repeat(30)), /*#__PURE__*/React.createElement(_Style.default, {
       for: "body"
     }, `
           body {

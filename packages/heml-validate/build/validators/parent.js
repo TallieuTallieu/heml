@@ -1,5 +1,11 @@
-import { HEMLError } from '@tallieu_tallieu/heml-utils';
-export default function parent($node, {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = parent;
+var _hemlUtils = require("@tallieu_tallieu/heml-utils");
+function parent($node, {
   tagName,
   parent: allowedParents
 }) {
@@ -16,5 +22,5 @@ export default function parent($node, {
   } else {
     message = `${message} It should only be used in: ${allowedParents.join(', ')}`;
   }
-  throw new HEMLError(message, $node);
+  throw new _hemlUtils.HEMLError(message, $node);
 }

@@ -1,5 +1,12 @@
-import selectorParser from 'postcss-selector-parser';
-const simpleSelectorParser = selectorParser();
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+var _postcssSelectorParser = _interopRequireDefault(require("postcss-selector-parser"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+const simpleSelectorParser = (0, _postcssSelectorParser.default)();
 
 /**
  * Add the element tag to selectors from the rule that match the element alias
@@ -7,7 +14,7 @@ const simpleSelectorParser = selectorParser();
  * @param  {Array[$node]} aliases array of cheerio nodes
  * @param  {Rule}         rule    postcss node
  */
-export default function (element, aliases, rule) {
+function _default(element, aliases, rule) {
   if (!aliases) return;
   let selectors = [];
   rule.selectors.forEach(selector => {
@@ -81,14 +88,14 @@ function targetsElementPseudo(element, selector) {
  * @return {String}          the modified selector
  */
 function appendElementSelector(element, selector) {
-  const processor = selectorParser(selectors => {
+  const processor = (0, _postcssSelectorParser.default)(selectors => {
     let combinatorNode = null;
 
     /**
      * looping breaks if we insert dynamically
      */
     selectors.each(selector => {
-      const elementNode = selectorParser.tag({
+      const elementNode = _postcssSelectorParser.default.tag({
         value: element.tag
       });
       selector.walk(node => {

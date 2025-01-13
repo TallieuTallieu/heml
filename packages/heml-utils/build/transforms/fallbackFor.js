@@ -1,9 +1,15 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = fallbackFor;
 /**
  * Adds the property this tranform is attached to, if the desired property wasn't given
  * @param  {String} prop
  * @return {Function}
  */
-export default function fallbackFor(desiredProp) {
+function fallbackFor(desiredProp) {
   return (prop, rule) => {
     let hasDesiredProp = false;
     rule.walkDecls(desiredProp, () => {

@@ -1,5 +1,11 @@
-import { min, max } from 'lodash';
-export default class HEMLError extends Error {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _lodash = require("lodash");
+class HEMLError extends Error {
   constructor(message, $node) {
     super(message);
     this.name = 'HEMLError';
@@ -10,10 +16,11 @@ export default class HEMLError extends Error {
     Error.captureStackTrace(this, HEMLError);
   }
 }
+exports.default = HEMLError;
 function buildExactSelector($node) {
   const nodeSelector = buildSelector($node[0]);
   const strSelector = $node.parents().map((index, node) => buildSelector(node)).toArray().reverse().concat([nodeSelector]).join(' > ');
-  const chopAfter = min(max(0, strSelector.lastIndexOf('#')), max(0, strSelector.lastIndexOf('html')), max(0, strSelector.lastIndexOf('heml')));
+  const chopAfter = (0, _lodash.min)((0, _lodash.max)(0, strSelector.lastIndexOf('#')), (0, _lodash.max)(0, strSelector.lastIndexOf('html')), (0, _lodash.max)(0, strSelector.lastIndexOf('heml')));
   return strSelector.substr(chopAfter);
 }
 function buildSelector(node) {

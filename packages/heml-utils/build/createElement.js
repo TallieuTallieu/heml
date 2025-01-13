@@ -1,10 +1,16 @@
-import { defaults, isFunction } from 'lodash';
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+var _lodash = require("lodash");
 const textRegex = /^(text(-([^-\s]+))?(-([^-\s]+))?|word-(break|spacing|wrap)|line-break|hanging-punctuation|hyphens|letter-spacing|overflow-wrap|tab-size|white-space|font-family|font-weight|font-style|font-variant|color)$/i;
-export default function (name, element) {
+function _default(name, element) {
   if (!name || name.trim().length === 0) {
     throw new Error(`When creating an element, you must set the name. ${name.trim().length === 0 ? 'An empty string' : `"${name}"`} was given.`);
   }
-  if (isFunction(element)) {
+  if ((0, _lodash.isFunction)(element)) {
     element = {
       render: element
     };
@@ -14,7 +20,7 @@ export default function (name, element) {
     element.rules['.header'] = [textRegex];
     element.rules['.text'] = [textRegex, 'font-size', 'line-height'];
   }
-  element = defaults({}, element || {}, {
+  element = (0, _lodash.defaults)({}, element || {}, {
     tagName: name.trim().toLowerCase(),
     attrs: [],
     children: true,

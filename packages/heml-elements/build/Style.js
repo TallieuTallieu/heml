@@ -1,11 +1,22 @@
-import HEML, { createElement } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
-import hemlstyles from '@tallieu_tallieu/heml-styles';
-import { castArray, isEqual, uniqWith, sortBy } from 'lodash';
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _hemlUtils = _interopRequireWildcard(require("@tallieu_tallieu/heml-utils"));
+var _hemlStyles = _interopRequireDefault(require("@tallieu_tallieu/heml-styles"));
+var _lodash = require("lodash");
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+// eslint-disable-line no-unused-vars
+
 const START_EMBED_CSS = `/*!***START:EMBED_CSS*****/`;
 const START_INLINE_CSS = `/*!***START:INLINE_CSS*****/`;
 let styleMap;
 let options;
-export default createElement('style', {
+var _default = exports.default = (0, _hemlUtils.createElement)('style', {
   parent: ['head'],
   attrs: ['for', 'heml-embed'],
   defaultAttrs: {
@@ -24,7 +35,7 @@ export default createElement('style', {
     };
     for (let element of elements) {
       if (element.postcss) {
-        options.plugins = options.plugins.concat(castArray(element.postcss));
+        options.plugins = options.plugins.concat((0, _lodash.castArray)(element.postcss));
       }
       if (element.rules) {
         options.elements[element.tagName] = element.rules;
@@ -59,8 +70,8 @@ export default createElement('style', {
 
     /** combine the non-ignored css to be combined */
     for (let [element, styles] of styleMap) {
-      styles = uniqWith(styles, isEqual);
-      styles = element === 'global' ? styles : sortBy(styles, ['embed', 'css']);
+      styles = (0, _lodash.uniqWith)(styles, _lodash.isEqual);
+      styles = element === 'global' ? styles : (0, _lodash.sortBy)(styles, ['embed', 'css']);
       styles.forEach(({
         ignore,
         embed,
@@ -82,7 +93,7 @@ export default createElement('style', {
     }
     let {
       css: processedCss
-    } = await hemlstyles(fullCSS, options);
+    } = await (0, _hemlStyles.default)(fullCSS, options);
 
     /** put the ignored css back in */
     ignoredCSS.forEach(({

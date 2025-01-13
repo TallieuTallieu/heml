@@ -1,7 +1,13 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = ieAlignFallback;
 /**
  * inline margin-left: auto; and margin-right: auto; otherwise, through it to 0
  */
-export default function ieAlignFallback(decl) {
+function ieAlignFallback(decl) {
   if (decl.prop === 'margin-top' || decl.prop === 'margin-bottom') {
     return decl.remove();
   }

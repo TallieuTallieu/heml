@@ -1,5 +1,10 @@
-import { isPlainObject, escapeRegExp, isString, compact } from 'lodash';
+"use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+var _lodash = require("lodash");
 /**
    * remap the elements var to looks like this
    * [
@@ -21,7 +26,7 @@ import { isPlainObject, escapeRegExp, isString, compact } from 'lodash';
  * @param  {Object} elements the given elements
  * @return {Array}  elements in a more usable format
  */
-export default function (originalElements) {
+function _default(originalElements) {
   let elements = [];
   for (const [tag, originalRules] of Object.entries(originalElements)) {
     let defaults = [];
@@ -36,11 +41,11 @@ export default function (originalElements) {
       if (pseudo) pseudos[pseudo] = selector;
 
       /** remap the rules to always be { prop: RegExp, transform: Function } */
-      rules[selector] = compact(decls.map(decl => {
-        if (isPlainObject(decl) && Object.keys(decl).length === 0) return;
-        const prop = isPlainObject(decl) ? Object.keys(decl)[0] : decl;
-        const transform = isPlainObject(decl) ? Object.values(decl)[0] : () => {};
-        if (isString(prop) && prop.startsWith('@')) return;
+      rules[selector] = (0, _lodash.compact)(decls.map(decl => {
+        if ((0, _lodash.isPlainObject)(decl) && Object.keys(decl).length === 0) return;
+        const prop = (0, _lodash.isPlainObject)(decl) ? Object.keys(decl)[0] : decl;
+        const transform = (0, _lodash.isPlainObject)(decl) ? Object.values(decl)[0] : () => {};
+        if ((0, _lodash.isString)(prop) && prop.startsWith('@')) return;
         return {
           prop: toRegExp(prop),
           transform
@@ -65,13 +70,13 @@ export default function (originalElements) {
  */
 function findAtDecl(decls, prop) {
   const foundDecls = decls.filter(decl => {
-    return isPlainObject(decl) && Object.keys(decl).length > 0 && Object.keys(decl)[0] === `@${prop}` || decl === `@${prop}`;
+    return (0, _lodash.isPlainObject)(decl) && Object.keys(decl).length > 0 && Object.keys(decl)[0] === `@${prop}` || decl === `@${prop}`;
   });
   if (foundDecls.length === 0) {
     return;
   }
   const decl = foundDecls[0];
-  return isPlainObject(decl) ? Object.values(decl)[0] : true;
+  return (0, _lodash.isPlainObject)(decl) ? Object.values(decl)[0] : true;
 }
 
 /**
@@ -80,13 +85,13 @@ function findAtDecl(decls, prop) {
  * @return {RegExp}              the regular expression
  */
 function toRegExp(string) {
-  if (isString(string) && string.startsWith('/') && string.lastIndexOf('/') !== 0) {
+  if ((0, _lodash.isString)(string) && string.startsWith('/') && string.lastIndexOf('/') !== 0) {
     const pattern = string.substr(1, string.lastIndexOf('/') - 1);
     const opts = string.substr(string.lastIndexOf('/') + 1).toLowerCase();
     return new RegExp(pattern, opts.includes('i') ? opts : `${opts}i`);
   }
-  if (isString(string)) {
-    return new RegExp(`^${escapeRegExp(string)}$`, 'i');
+  if ((0, _lodash.isString)(string)) {
+    return new RegExp(`^${(0, _lodash.escapeRegExp)(string)}$`, 'i');
   }
   return string;
 }

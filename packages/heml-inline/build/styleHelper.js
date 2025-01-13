@@ -1,5 +1,12 @@
-import { compact } from 'lodash';
+"use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getProp = getProp;
+exports.removeProp = removeProp;
+exports.setProp = setProp;
+var _lodash = require("lodash");
 /**
  * Gets the value of a prop in a given inline style string
  * @param {String} style inline styles
@@ -41,7 +48,7 @@ function setProp(style = '', prop, value) {
   if (!updated) {
     updatedDecls.push(`${prop}: ${value}`);
   }
-  return compact(updatedDecls).join(';');
+  return (0, _lodash.compact)(updatedDecls).join(';');
 }
 
 /**
@@ -60,6 +67,5 @@ function removeProp(style = '', prop) {
     }
     return decl;
   });
-  return compact(updatedDecls).join(';');
+  return (0, _lodash.compact)(updatedDecls).join(';');
 }
-export { getProp, setProp, removeProp };

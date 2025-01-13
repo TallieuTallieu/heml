@@ -1,5 +1,11 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = stringifyAttributes;
 /** escapeless version of npmjs.com/stringify-attributes */
-export default function stringifyAttributes(attrsObj) {
+function stringifyAttributes(attrsObj) {
   const attributes = [];
   for (let [key, value] of Object.entries(attrsObj)) {
     if (value === false) {
