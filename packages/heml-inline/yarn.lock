@@ -5,9 +5,9 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@heml/inline@workspace:.":
+"@tallieu_tallieu/heml-inline@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@heml/inline@workspace:."
+  resolution: "@tallieu_tallieu/heml-inline@workspace:."
   dependencies:
     juice: "npm:^11.0.0"
     lodash: "npm:^4.17.21"

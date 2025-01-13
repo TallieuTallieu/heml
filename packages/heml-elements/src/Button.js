@@ -1,4 +1,4 @@
-import HEML, { createElement, transforms, cssGroups } from '@heml/utils' // eslint-disable-line no-unused-vars
+import HEML, { createElement, transforms, cssGroups } from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
 import { omit, pick } from 'lodash'
 import Style from './Style'
 

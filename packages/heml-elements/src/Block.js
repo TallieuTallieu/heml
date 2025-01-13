@@ -1,4 +1,4 @@
-import HEML, { createElement, transforms, cssGroups, condition } from '@heml/utils' // eslint-disable-line no-unused-vars
+import HEML, { createElement, transforms, cssGroups, condition } from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
 import Style from './Style'
 
 const {

@@ -1,4 +1,4 @@
-import { HEMLError } from '@heml/utils'
+import { HEMLError } from '@tallieu_tallieu/heml-utils'
 import { isArray, intersection, difference } from 'lodash'
 
 export default function children ($node, { tagName, children: requiredChildren }) {

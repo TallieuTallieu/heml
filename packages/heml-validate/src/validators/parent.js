@@ -1,4 +1,4 @@
-import { HEMLError } from '@heml/utils'
+import { HEMLError } from '@tallieu_tallieu/heml-utils'
 
 export default function parent ($node, { tagName, parent: allowedParents }) {
   const parentTag = $node.parent().get(0)

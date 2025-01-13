@@ -1,6 +1,6 @@
 {
   "name": "@tallieu_tallieu/heml-render",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "description": "FORK: Renderer for HEML",
   "keywords": [
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "https://github.com/TallieuTallieu/heml.git"
   },
-    "author": "Tallieu&Tallieu <dev@tnt.be> (https://tnt.be)",
+  "author": "Tallieu&Tallieu <dev@tnt.be> (https://tnt.be)",
   "files": [
     "build/"
   ],

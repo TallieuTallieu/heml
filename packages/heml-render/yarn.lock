@@ -5,9 +5,9 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@heml/render@workspace:.":
+"@tallieu_tallieu/heml-render@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@heml/render@workspace:."
+  resolution: "@tallieu_tallieu/heml-render@workspace:."
   dependencies:
     html-tags: "npm:^4.0.0"
     is-promise: "npm:^4.0.0"

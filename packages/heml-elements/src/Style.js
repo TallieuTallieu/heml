@@ -1,5 +1,5 @@
-import HEML, { createElement } from '@heml/utils' // eslint-disable-line no-unused-vars
-import hemlstyles from '@heml/styles'
+import HEML, { createElement } from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
+import hemlstyles from '@tallieu_tallieu/heml-styles'
 import { castArray, isEqual, uniqWith, sortBy } from 'lodash'
 
 const START_EMBED_CSS = `/*!***START:EMBED_CSS*****/`

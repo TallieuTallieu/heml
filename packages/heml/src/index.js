@@ -1,12 +1,12 @@
-import parse from "@tallieu_tallieu/parse";
-import render from "@tallieu_tallieu/render";
-import inline from "@tallieu_talieu/inline";
-import validate from "@tallieu_talieu/validate";
-import { condition } from "@tallieu_talieu/utils";
+import parse from "@tallieu_tallieu/helm-parse";
+import render from "@tallieu_tallieu/helm-render";
+import inline from "@tallieu_talieu/helm-inline";
+import validate from "@tallieu_talieu/helm-validate";
+import { condition } from "@tallieu_talieu/helm-utils";
 import byteLength from "byte-length";
 import { html as beautify } from "js-beautify";
 import { toArray, flattenDeep } from "lodash";
-import * as coreElements from "@tallieu_talieu/elements";
+import * as coreElements from "@tallieu_talieu/helm-elements";
 
 /**
  * renders the given HEML string with the config provided

@@ -1,4 +1,4 @@
-import { renderElement } from '@heml/render'
+import { renderElement } from '@tallieu_tallieu/heml-render'
 import cssGroups from 'css-groups'
 import createElement from './createElement'
 import HEMLError from './HEMLError'

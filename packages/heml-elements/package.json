@@ -1,6 +1,6 @@
 {
   "name": "@tallieu_tallieu/heml-elements",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Core elements for HEML",
   "type": "module",
   "keywords": [

@@ -1,4 +1,4 @@
-import HEML, { createElement, transforms } from '@heml/utils' // eslint-disable-line no-unused-vars
+import HEML, { createElement, transforms } from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
 import { sum, max, isUndefined } from 'lodash'
 
 export default createElement('row', {

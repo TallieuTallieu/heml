@@ -1,4 +1,4 @@
-import { HEMLError } from '@heml/utils'
+import { HEMLError } from '@tallieu_tallieu/heml-utils'
 import { difference } from 'lodash'
 
 const nativeAttrs = [ 'id', 'class', 'dir', 'lang', 'accesskey', 'tabindex', 'title', 'translate' ]

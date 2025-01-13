@@ -1,4 +1,4 @@
-import HEML, { createElement } from '@heml/utils' // eslint-disable-line no-unused-vars
+import HEML, { createElement } from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
 import Meta from './Meta'
 
 export default createElement('preview', {
