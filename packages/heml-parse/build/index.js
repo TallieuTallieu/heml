@@ -1,23 +1,14 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _cheerio = require("cheerio");
-var _lodash = require("lodash");
-var _cryptoRandomString = _interopRequireDefault(require("crypto-random-string"));
-var _htmlTags = _interopRequireWildcard(require("html-tags"));
-function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-const wrappingHtmlTags = (0, _lodash.difference)(_htmlTags.default, _htmlTags.voidHtmlTags);
+import { load } from "cheerio";
+import { difference, compact, first } from "lodash";
+import randomString from "crypto-random-string";
+import htmlTags, { voidHtmlTags } from "html-tags";
+const wrappingHtmlTags = difference(htmlTags, voidHtmlTags);
 function parse(contents, options = {}) {
   const {
     elements = [],
     cheerio: cheerioOptions = {}
   } = options;
-  const $ = (0, _cheerio.load)(contents, {
+  const $ = load(contents, {
     xmlMode: true,
     lowerCaseTags: true,
     decodeEntities: false,
@@ -29,7 +20,7 @@ function parse(contents, options = {}) {
   $.prototype.toNodes = function () {
     return this.toArray().map(node => $(node));
   };
-  const selfClosingTags = [..._htmlTags.voidHtmlTags, ...elements.filter(element => element.children === false).map(({
+  const selfClosingTags = [...voidHtmlTags, ...elements.filter(element => element.children === false).map(({
     tagName
   }) => tagName)];
   const wrappingTags = [...wrappingHtmlTags, ...elements.filter(element => element.children !== false).map(({
@@ -52,7 +43,7 @@ function parse(contents, options = {}) {
   });
 
   /** try for head, fallback to body, then heml */
-  const $head = (0, _lodash.first)((0, _lodash.compact)([...$("head").toNodes(), ...$("body").toNodes(), ...$("heml").toNodes()]));
+  const $head = first(compact([...$("head").toNodes(), ...$("body").toNodes(), ...$("heml").toNodes()]));
 
   /** move inline styles to a style tag with unique ids so they can be hit by the css processor */
   if ($head) {
@@ -64,7 +55,7 @@ function parse(contents, options = {}) {
       const css = $node.attr("style");
       $node.removeAttr("style");
       if (!id) {
-        id = `heml-${(0, _cryptoRandomString.default)(5)}`;
+        id = `heml-${randomString(5)}`;
         $node.attr("id", id);
       }
       return `#${id} {${css}}`;
@@ -73,4 +64,4 @@ function parse(contents, options = {}) {
   }
   return $;
 }
-var _default = exports.default = parse;
+export default parse;

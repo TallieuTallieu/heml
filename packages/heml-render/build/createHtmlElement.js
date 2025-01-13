@@ -1,19 +1,12 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = createHtmlElement;
-var _stringifyAttributes = _interopRequireDefault(require("./stringifyAttributes"));
-var _htmlTags = require("html-tags");
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-function createHtmlElement({
+import stringifyAttributes from './stringifyAttributes';
+import { voidHtmlTags } from 'html-tags';
+export default function createHtmlElement({
   name,
   attrs,
   contents = ' '
 }) {
-  if (_htmlTags.voidHtmlTags.includes(name)) {
-    return `<${name}${attrs ? (0, _stringifyAttributes.default)(attrs) : ''} />`;
+  if (voidHtmlTags.includes(name)) {
+    return `<${name}${attrs ? stringifyAttributes(attrs) : ''} />`;
   }
-  return `<${name}${attrs ? (0, _stringifyAttributes.default)(attrs) : ''}>${contents || ' '}</${name}>`;
+  return `<${name}${attrs ? stringifyAttributes(attrs) : ''}>${contents || ' '}</${name}>`;
 }

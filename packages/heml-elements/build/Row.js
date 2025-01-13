@@ -1,21 +1,12 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _hemlUtils = _interopRequireWildcard(require("@tallieu_tallieu/heml-utils"));
-var _lodash = require("lodash");
-function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
-// eslint-disable-line no-unused-vars
-var _default = exports.default = (0, _hemlUtils.createElement)('row', {
+import HEML, { createElement, transforms } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
+import { sum, max, isUndefined } from 'lodash';
+export default createElement('row', {
   children: ['column'],
   rules: {
     '.row': [{
       '@pseudo': 'root'
     }, {
-      display: _hemlUtils.transforms.trueHide('block')
+      display: transforms.trueHide('block')
     }],
     '.row__table': [{
       '@pseudo': 'table'
@@ -45,13 +36,13 @@ var _default = exports.default = (0, _hemlUtils.createElement)('row', {
     $.findNodes('row').forEach($row => {
       const $columns = $row.children().toNodes();
       const columnSizes = $columns.map($column => parseInt($column.attr('large') || 0, 10));
-      const remainingSpace = 12 - (0, _lodash.sum)(columnSizes);
+      const remainingSpace = 12 - sum(columnSizes);
       const remainingColumns = columnSizes.filter(size => size === 0).length;
-      const spacePerColumn = (0, _lodash.max)([Math.floor(remainingSpace / remainingColumns), 1]);
+      const spacePerColumn = max([Math.floor(remainingSpace / remainingColumns), 1]);
       const overageSpace = remainingSpace - spacePerColumn * remainingColumns;
       let filledColumns = 0;
       $columns.forEach($column => {
-        if ((0, _lodash.isUndefined)($column.attr('large'))) {
+        if (isUndefined($column.attr('large'))) {
           filledColumns++;
           $column.attr('large', spacePerColumn + (filledColumns === remainingColumns ? overageSpace : 0));
         }

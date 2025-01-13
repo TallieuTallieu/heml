@@ -1,25 +1,14 @@
-"use strict";
+import { filter, difference, keyBy, first } from 'lodash';
+import renderElement from './renderElement';
+export { renderElement };
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = render;
-Object.defineProperty(exports, "renderElement", {
-  enumerable: true,
-  get: function () {
-    return _renderElement.default;
-  }
-});
-var _lodash = require("lodash");
-var _renderElement = _interopRequireDefault(require("./renderElement"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 /**
  * preRender, render, and postRender all elements
  * @param  {Array}   elements  List of element definitons
  * @param  {Object}  globals
  * @return {Promise}           Returns an object with the cheerio object and metadata
  */
-async function render($, options = {}) {
+export default async function render($, options = {}) {
   const {
     elements = []
   } = options;
@@ -28,7 +17,7 @@ async function render($, options = {}) {
     elements,
     options
   };
-  const Meta = (0, _lodash.first)(elements.filter(({
+  const Meta = first(elements.filter(({
     tagName
   }) => tagName === 'meta'));
   await preRenderElements(elements, globals);
@@ -74,13 +63,13 @@ async function renderElements(elements, globals) {
   const {
     $
   } = globals;
-  const elementMap = (0, _lodash.keyBy)(elements, 'tagName');
-  const metaTagNames = (0, _lodash.filter)(elements, {
+  const elementMap = keyBy(elements, 'tagName');
+  const metaTagNames = filter(elements, {
     parent: ['head']
   }).map(({
     tagName
   }) => tagName);
-  const nonMetaTagNames = (0, _lodash.difference)(elements.map(({
+  const nonMetaTagNames = difference(elements.map(({
     tagName
   }) => tagName), metaTagNames);
   const $nodes = [...$.findNodes(metaTagNames), /** Render the meta elements first to last */
@@ -89,7 +78,7 @@ async function renderElements(elements, globals) {
     const element = elementMap[$node.prop('tagName').toLowerCase()];
     const contents = $node.html();
     const attrs = $node[0].attribs;
-    const renderedValue = await Promise.resolve((0, _renderElement.default)(element, attrs, contents));
+    const renderedValue = await Promise.resolve(renderElement(element, attrs, contents));
     $node.replaceWith(renderedValue.trim());
   }
 }

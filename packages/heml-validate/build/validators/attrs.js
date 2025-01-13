@@ -1,13 +1,7 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = attrs;
-var _hemlUtils = require("@tallieu_tallieu/heml-utils");
-var _lodash = require("lodash");
+import { HEMLError } from '@tallieu_tallieu/heml-utils';
+import { difference } from 'lodash';
 const nativeAttrs = ['id', 'class', 'dir', 'lang', 'accesskey', 'tabindex', 'title', 'translate'];
-function attrs($node, {
+export default function attrs($node, {
   tagName,
   attrs: allowedAttrs,
   defaultAttrs
@@ -18,11 +12,11 @@ function attrs($node, {
   }
   allowedAttrs = allowedAttrs.concat(Object.keys(defaultAttrs)).concat(nativeAttrs);
   const usedAttrs = Object.keys($node.get(0).attribs);
-  const foundNotAllowedAttrs = (0, _lodash.difference)(usedAttrs, allowedAttrs);
+  const foundNotAllowedAttrs = difference(usedAttrs, allowedAttrs);
   if (foundNotAllowedAttrs.length > 0) {
     /** remove non-whitelisted attributes */
     foundNotAllowedAttrs.forEach(attr => $node.removeAttr(attr));
     const plural = foundNotAllowedAttrs.length > 1;
-    throw new _hemlUtils.HEMLError(`Attribute${plural ? 's' : ''} ${foundNotAllowedAttrs.join(', ')} ${plural ? 'are' : 'is'} not allowed on ${tagName}.`, $node);
+    throw new HEMLError(`Attribute${plural ? 's' : ''} ${foundNotAllowedAttrs.join(', ')} ${plural ? 'are' : 'is'} not allowed on ${tagName}.`, $node);
   }
 }

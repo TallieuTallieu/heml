@@ -1,11 +1,7 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _lodash = require("lodash");
-var _default = (type, containsTables = false) => (decl, originalRule) => {
+import { isUndefined } from 'lodash';
+export default (type, containsTables = false) => (decl, originalRule) => {
   if (decl.value.trim().toLowerCase() === 'none') {
     decl.after(decl.clone({
       prop: 'mso-hide',
@@ -29,7 +25,7 @@ var _default = (type, containsTables = false) => (decl, originalRule) => {
       }));
       originalRule.after(hideTableRule);
     }
-  } else if (decl.value.trim().toLowerCase() === type || (0, _lodash.isUndefined)(type)) {
+  } else if (decl.value.trim().toLowerCase() === type || isUndefined(type)) {
     decl.after(decl.clone({
       prop: 'mso-hide',
       value: 'none'
@@ -54,4 +50,3 @@ var _default = (type, containsTables = false) => (decl, originalRule) => {
     }
   }
 };
-exports.default = _default;

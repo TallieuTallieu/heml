@@ -1,76 +1,69 @@
-"use strict";
+import postcss from 'postcss';
+import safeParser from 'postcss-safe-parser';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _postcss = _interopRequireDefault(require("postcss"));
-var _postcssSafeParser = _interopRequireDefault(require("postcss-safe-parser"));
-var _postcssDiscardComments = _interopRequireDefault(require("postcss-discard-comments"));
-var _postcssMinifyGradients = _interopRequireDefault(require("postcss-minify-gradients"));
-var _postcssNormalizeDisplayValues = _interopRequireDefault(require("postcss-normalize-display-values"));
-var _postcssNormalizeTimingFunctions = _interopRequireDefault(require("postcss-normalize-timing-functions"));
-var _postcssConvertValues = _interopRequireDefault(require("postcss-convert-values"));
-var _postcssCalc = _interopRequireDefault(require("postcss-calc"));
-var _postcssOrderedValues = _interopRequireDefault(require("postcss-ordered-values"));
-var _postcssMinifySelectors = _interopRequireDefault(require("postcss-minify-selectors"));
-var _postcssMinifyParams = _interopRequireDefault(require("postcss-minify-params"));
-var _postcssDiscardOverridden = _interopRequireDefault(require("postcss-discard-overridden"));
-var _postcssNormalizeString = _interopRequireDefault(require("postcss-normalize-string"));
-var _postcssMinifyFontValues = _interopRequireDefault(require("postcss-minify-font-values"));
-var _postcssNormalizeRepeatStyle = _interopRequireDefault(require("postcss-normalize-repeat-style"));
-var _postcssNormalizePositions = _interopRequireDefault(require("postcss-normalize-positions"));
-var _postcssDiscardEmpty = _interopRequireDefault(require("postcss-discard-empty"));
-var _postcssUniqueSelectors = _interopRequireDefault(require("postcss-unique-selectors"));
-var _cssDeclarationSorter = _interopRequireDefault(require("css-declaration-sorter"));
-var _postcssMergeAdjacentMedia = _interopRequireDefault(require("./plugins/postcss-merge-adjacent-media"));
-var _postcssDiscardDuplicates = _interopRequireDefault(require("postcss-discard-duplicates"));
-var _postcssMergeRules = _interopRequireDefault(require("postcss-merge-rules"));
-var _postcssRgbaHex = _interopRequireDefault(require("postcss-rgba-hex"));
-var _postcssColornamesToHex = _interopRequireDefault(require("postcss-colornames-to-hex"));
-var _postcssColorRgbaFallback = _interopRequireDefault(require("postcss-color-rgba-fallback"));
-var _postcssHexFormat = _interopRequireDefault(require("postcss-hex-format"));
-var _postcssExpandShorthand = _interopRequireDefault(require("./plugins/postcss-expand-shorthand"));
-var _postcssEmailImportant = _interopRequireDefault(require("postcss-email-important"));
-var _postcssZeroOutMargin = _interopRequireDefault(require("./plugins/postcss-zero-out-margin"));
-var _postcssElementExpander = _interopRequireDefault(require("./plugins/postcss-element-expander"));
-var _postcssMergeLonghand = _interopRequireDefault(require("postcss-merge-longhand"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 /** optimize css - credz to cssnano */
+import discardComments from 'postcss-discard-comments';
+import minifyGradients from 'postcss-minify-gradients';
+import normalizeDisplayValues from 'postcss-normalize-display-values';
+import normalizeTimingFunctions from 'postcss-normalize-timing-functions';
+import convertValues from 'postcss-convert-values';
+import reduceCalc from 'postcss-calc';
+import orderedValues from 'postcss-ordered-values';
+import minifySelectors from 'postcss-minify-selectors';
+import minifyParams from 'postcss-minify-params';
+import discardOverridden from 'postcss-discard-overridden';
+import normalizeString from 'postcss-normalize-string';
+import minifyFontValues from 'postcss-minify-font-values';
+import normalizeRepeatStyle from 'postcss-normalize-repeat-style';
+import normalizePositions from 'postcss-normalize-positions';
+import discardEmpty from 'postcss-discard-empty';
+import uniqueSelectors from 'postcss-unique-selectors';
+import declarationSorter from 'css-declaration-sorter';
+import mergeAdjacentMedia from './plugins/postcss-merge-adjacent-media';
+import discardDuplicates from 'postcss-discard-duplicates';
+import mergeRules from 'postcss-merge-rules';
 
 /** format colors */
+import rgbToHex from 'postcss-rgba-hex';
+import colorNamesToHex from 'postcss-colornames-to-hex';
+import rgbaFallback from 'postcss-color-rgba-fallback';
+import formatHexColors from 'postcss-hex-format';
 
 /** email fixes */
+import shorthandExpand from './plugins/postcss-expand-shorthand';
+import emailImportant from 'postcss-email-important';
+import zeroOutMargin from './plugins/postcss-zero-out-margin';
 
 /** custom element expander */
-
+import elementExpander from './plugins/postcss-element-expander';
+import mergeLonghand from 'postcss-merge-longhand';
 async function hemlstyles(contents, options = {}) {
   const {
     elements = {},
     aliases = {},
     plugins = []
   } = options;
-  return (0, _postcss.default)([...plugins,
+  return postcss([...plugins,
   // /** optimize css */
-  (0, _postcssDiscardComments.default)({
+  discardComments({
     removeAll: false
-  }), (0, _postcssMinifyGradients.default)(), (0, _postcssNormalizeDisplayValues.default)(), (0, _postcssNormalizeTimingFunctions.default)(), (0, _postcssConvertValues.default)({
+  }), minifyGradients(), normalizeDisplayValues(), normalizeTimingFunctions(), convertValues({
     length: false
-  }), (0, _postcssCalc.default)(), (0, _postcssOrderedValues.default)(), (0, _postcssMinifySelectors.default)(), (0, _postcssMinifyParams.default)(), (0, _postcssDiscardOverridden.default)(), (0, _postcssNormalizeString.default)(), (0, _postcssMinifyFontValues.default)({
+  }), reduceCalc(), orderedValues(), minifySelectors(), minifyParams(), discardOverridden(), normalizeString(), minifyFontValues({
     removeQuotes: false
-  }), (0, _postcssNormalizeRepeatStyle.default)(), (0, _postcssNormalizePositions.default)(), (0, _postcssDiscardEmpty.default)(), (0, _postcssUniqueSelectors.default)(), (0, _cssDeclarationSorter.default)(), (0, _postcssMergeAdjacentMedia.default)(), (0, _postcssDiscardDuplicates.default)(), (0, _postcssMergeRules.default)(), /** color handling */
-  (0, _postcssColornamesToHex.default)(), (0, _postcssRgbaHex.default)({
+  }), normalizeRepeatStyle(), normalizePositions(), discardEmpty(), uniqueSelectors(), declarationSorter(), mergeAdjacentMedia(), discardDuplicates(), mergeRules(), /** color handling */
+  colorNamesToHex(), rgbToHex({
     rgbOnly: true,
     silent: true
-  }), (0, _postcssColorRgbaFallback.default)(), (0, _postcssHexFormat.default)(), /** email fixes */
-  (0, _postcssEmailImportant.default)(), (0, _postcssExpandShorthand.default)(),
+  }), rgbaFallback(), formatHexColors(), /** email fixes */
+  emailImportant(), shorthandExpand(),
   // so we can match for margin-top/margin-left etc.
-  (0, _postcssZeroOutMargin.default)(), /** expanding to match heml elements */
-  (0, _postcssElementExpander.default)({
+  zeroOutMargin(), /** expanding to match heml elements */
+  elementExpander({
     elements,
     aliases
-  }), (0, _postcssMergeLonghand.default)(), (0, _postcssDiscardEmpty.default)()]).process(contents, {
-    parser: _postcssSafeParser.default
+  }), mergeLonghand(), discardEmpty()]).process(contents, {
+    parser: safeParser
   });
 }
-var _default = exports.default = hemlstyles;
+export default hemlstyles;

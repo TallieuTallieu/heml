@@ -1,13 +1,5 @@
-"use strict";
+import selectorParser from 'postcss-selector-parser';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.expandElementRule = expandElementRule;
-exports.replaceElementPseudoMentions = replaceElementPseudoMentions;
-exports.replaceElementTagMentions = replaceElementTagMentions;
-var _postcssSelectorParser = _interopRequireDefault(require("postcss-selector-parser"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 /**
  * replace all custom element tag selectors
  * @param  {Object} element  the element definition
@@ -15,7 +7,7 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e
  * @return {String}          the replaced selector
  */
 function replaceElementTagMentions(element, selector) {
-  const processor = (0, _postcssSelectorParser.default)(selectors => {
+  const processor = selectorParser(selectors => {
     let nodesToReplace = [];
 
     /**
@@ -39,7 +31,7 @@ function replaceElementTagMentions(element, selector) {
  * @return {String}          the replaced selector
  */
 function replaceElementPseudoMentions(element, selector) {
-  const processor = (0, _postcssSelectorParser.default)(selectors => {
+  const processor = selectorParser(selectors => {
     let nodesToReplace = [];
 
     /**
@@ -131,3 +123,4 @@ function expandElementRule(element, selectors = [], originalRule) {
   });
   return expandedRules;
 }
+export { replaceElementTagMentions, replaceElementPseudoMentions, expandElementRule };

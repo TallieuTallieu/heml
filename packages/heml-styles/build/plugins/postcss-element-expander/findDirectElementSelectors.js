@@ -1,12 +1,5 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = _default;
-var _postcssSelectorParser = _interopRequireDefault(require("postcss-selector-parser"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-const simpleSelectorParser = (0, _postcssSelectorParser.default)();
+import selectorParser from 'postcss-selector-parser';
+const simpleSelectorParser = selectorParser();
 
 /**
  * find all selectors that target the give element
@@ -14,7 +7,7 @@ const simpleSelectorParser = (0, _postcssSelectorParser.default)();
  * @param  {String} selector the selector
  * @return {Array}           the matched selectors
  */
-function _default(element, selector) {
+export default function (element, selector) {
   const selectors = simpleSelectorParser.process(selector).res;
   return selectors.filter(selector => {
     let selectorNodes = selector.nodes.concat([]).reverse(); // clone the array

@@ -1,15 +1,9 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = _default;
 /**
  * builds the html that gets rendered when there are heml errors
  * @param  {Array}         errors an array of HEMLErrors
  * @return {String}        some html
  */
-function _default(errors = []) {
+export default function (errors = []) {
   const title = `${errors.length} validation ${errors.length > 1 ? 'errors' : 'error'}`;
   return `
   <html>

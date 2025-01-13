@@ -1,12 +1,5 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _postcss = _interopRequireDefault(require("postcss"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-var _default = exports.default = _postcss.default.plugin('postcss-merge-adjacent-media', () => root => {
+import postcss from 'postcss';
+export default postcss.plugin('postcss-merge-adjacent-media', () => root => {
   root.walkAtRules(rule => {
     if (rule.name !== 'media') {
       return;
