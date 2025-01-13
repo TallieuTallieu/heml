@@ -1,6 +1,6 @@
 {
   "name": "@tallieu_tallieu/heml",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "description": "FORK: HEML is an open source markup language for building responsive email",
   "keywords": [
