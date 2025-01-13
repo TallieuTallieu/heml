@@ -1,47 +1,52 @@
-import HEML, { createElement, transforms, cssGroups } from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
-import Style from './Style'
-
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import HEML, { createElement, transforms, cssGroups } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
+import Style from './Style';
 const {
   background,
   box,
   padding,
   border,
-  borderRadius } = cssGroups
-
-const breakpoint = 600
-
+  borderRadius
+} = cssGroups;
+const breakpoint = 600;
 export default createElement('column', {
-  attrs: [ 'small', 'large' ],
-  parent: [ 'row' ],
-  defaultAttrs: { small: 12, large: 12 },
-  containsText: true,
-
-  rules: {
-    '.column': [ { '@pseudo': 'root' }, { display: transforms.trueHide(undefined, true) }, background, box, padding, border, borderRadius, 'vertical-align' ]
+  attrs: ['small', 'large'],
+  parent: ['row'],
+  defaultAttrs: {
+    small: 12,
+    large: 12
   },
-
-  render (attrs, contents) {
-    const small = parseInt(attrs.small, 10)
-    const large = parseInt(attrs.large, 10)
-    const largeWidth = `${Math.round((100 * large) / 12)}%`
-    attrs.class += ` column col-sm-${small}`
-
-    delete attrs.large
-    delete attrs.small
-
-    return ([
-      <td {...attrs} width={largeWidth} style={`width: ${largeWidth};`} align='left' valign='top'>
-        {contents.length === 0 ? '&nbsp;' : contents}
-      </td>,
-      small === large ? '' : (<Style for='column' heml-embed>{`
+  containsText: true,
+  rules: {
+    '.column': [{
+      '@pseudo': 'root'
+    }, {
+      display: transforms.trueHide(undefined, true)
+    }, background, box, padding, border, borderRadius, 'vertical-align']
+  },
+  render(attrs, contents) {
+    const small = parseInt(attrs.small, 10);
+    const large = parseInt(attrs.large, 10);
+    const largeWidth = `${Math.round(100 * large / 12)}%`;
+    attrs.class += ` column col-sm-${small}`;
+    delete attrs.large;
+    delete attrs.small;
+    return [/*#__PURE__*/React.createElement("td", _extends({}, attrs, {
+      width: largeWidth,
+      style: `width: ${largeWidth};`,
+      align: "left",
+      valign: "top"
+    }), contents.length === 0 ? '&nbsp;' : contents), small === large ? '' : /*#__PURE__*/React.createElement(Style, {
+      for: "column",
+      "heml-embed": true
+    }, `
          @media only screen and (max-width: ${breakpoint}px) {
           .column, .column-filler { float: left; box-sizing: border-box; }
           .col-sm-${small} {
-            width: ${Math.round((100 * small) / 12)}% !important;
+            width: ${Math.round(100 * small / 12)}% !important;
             display: block;
           }
         }
-      `}</Style>)
-    ])
+      `)];
   }
-})
+});

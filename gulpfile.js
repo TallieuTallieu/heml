@@ -2,7 +2,6 @@
 
 import { deleteSync } from "del";
 import { obj } from "through2";
-import newer from "gulp-newer";
 import babel from "gulp-babel";
 import plumber from "gulp-plumber";
 import gulp from "gulp";
@@ -33,10 +32,10 @@ export function build() {
         callback(null, file);
       }),
     )
-    .pipe(newer(dest))
+    //.pipe(newer(dest))
     .pipe(
       babel({
-        presets: [["@babel/env"], "@babel/react"],
+        presets: [["@babel/env", { targets: { node: 20 }, modules: false }], "@babel/react"],
       }),
     )
     .pipe(gulp.dest(dest))

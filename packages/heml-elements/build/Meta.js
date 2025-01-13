@@ -1,36 +1,28 @@
-import HEML, { createElement } from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
+import HEML, { createElement } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
 
-let metaMap
-
+let metaMap;
 export default createElement('meta', {
   attrs: true,
-  parent: [ 'head' ],
-
-  preRender () { metaMap = new Map([ [ 'meta', [] ] ]) },
-
-  render (attrs, contents) {
-    metaMap.get('meta').push(attrs)
-
-    return true
+  parent: ['head'],
+  preRender() {
+    metaMap = new Map([['meta', []]]);
   },
-
-  get (key) {
-    return metaMap.get(key)
+  render(attrs, contents) {
+    metaMap.get('meta').push(attrs);
+    return true;
   },
-
-  set (key, value) {
-    return metaMap.set(key, value)
+  get(key) {
+    return metaMap.get(key);
   },
-
-  flush () {
-    let metaObject = {}
-
-    for (let [ key, value ] of metaMap) {
-      metaObject[key] = value
+  set(key, value) {
+    return metaMap.set(key, value);
+  },
+  flush() {
+    let metaObject = {};
+    for (let [key, value] of metaMap) {
+      metaObject[key] = value;
     }
-
-    metaMap = null
-
-    return metaObject
+    metaMap = null;
+    return metaObject;
   }
-})
+});
