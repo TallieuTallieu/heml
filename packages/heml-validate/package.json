@@ -22,7 +22,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@tallieu_tallieu/heml-utils": "^1.0.4",
+    "@tallieu_tallieu/heml-utils": "^1.0.5",
     "lodash": "^4.17.21"
   },
   "packageManager": "yarn@4.6.0"

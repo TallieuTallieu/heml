@@ -22,7 +22,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@tallieu_tallieu/heml-render": "^1.0.5",
+    "@tallieu_tallieu/heml-render": "^1.0.7",
     "css-groups": "^0.1.1",
     "lodash": "^4.17.21"
   }

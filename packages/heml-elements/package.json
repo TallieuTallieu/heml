@@ -22,8 +22,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@tallieu_tallieu/heml-styles": "^1.0.3",
-    "@tallieu_tallieu/heml-utils": "^1.0.4",
+    "@tallieu_tallieu/heml-styles": "^1.0.4",
+    "@tallieu_tallieu/heml-utils": "^1.0.5",
     "axios": "^1.7.9",
     "image-size": "^1.2.0",
     "is-absolute-url": "^4.0.1",
