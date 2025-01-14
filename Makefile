@@ -82,3 +82,7 @@ bump-major:
 upgrade-packages:
 	@find ./packages -name "package.json" -not -path "*/node_modules/*" -type f -execdir yarn upgrade-interactive \;
 .PHONY: upgrade-packages
+
+yarn-packages:
+	@find ./packages -name "package.json" -not -path "*/node_modules/*" -type f -execdir yarn \;
+.PHONY: yarn-packages

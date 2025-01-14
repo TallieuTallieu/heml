@@ -21,29 +21,37 @@ if (win32 === path) {
 }
 
 export function build() {
-  return (
-    gulp
-      .src(scripts)
-      .pipe(
-        obj((file, enc, callback) => {
-          file._path = file.path;
-          file.path = file.path.replace(srcEx, libFragment);
-          callback(null, file);
-        }),
-      )
-      .pipe(
-        babel({
-          presets: [
-            ["@babel/env", { targets: { node: 20 }, modules: false }],
-            "@babel/react",
+  return gulp
+    .src(scripts)
+    .pipe(
+      obj((file, enc, callback) => {
+        file._path = file.path;
+        file.path = file.path.replace(srcEx, libFragment);
+        callback(null, file);
+      }),
+    )
+
+    .pipe(
+      babel({
+        presets: [
+          ["@babel/env", { targets: { node: 20 }, modules: false }],
+          ["@babel/react"],
+        ],
+        plugins: [
+          [
+            "@babel/plugin-transform-react-jsx",
+            {
+              runtime: "classic",
+              pragma: "utils.renderElement",
+            },
           ],
-        }),
-      )
-      .pipe(gulp.dest(dest))
-      .on("end", () => {
-        console.log(`Finished build`);
-      })
-  );
+        ],
+      }),
+    )
+    .pipe(gulp.dest(dest))
+    .on("end", () => {
+      console.log(`Finished build`);
+    });
 }
 
 export function watch() {
