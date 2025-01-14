@@ -19,7 +19,7 @@ import normalizePositions from 'postcss-normalize-positions'
 import discardEmpty from 'postcss-discard-empty'
 import uniqueSelectors from 'postcss-unique-selectors'
 import declarationSorter from 'css-declaration-sorter'
-import mergeAdjacentMedia from './plugins/postcss-merge-adjacent-media'
+import mergeAdjacentMedia from './plugins/postcss-merge-adjacent-media/index.js'
 import discardDuplicates from 'postcss-discard-duplicates'
 import mergeRules from 'postcss-merge-rules'
 
@@ -30,12 +30,12 @@ import rgbaFallback from 'postcss-color-rgba-fallback'
 import formatHexColors from 'postcss-hex-format'
 
 /** email fixes */
-import shorthandExpand from './plugins/postcss-expand-shorthand'
+import shorthandExpand from './plugins/postcss-expand-shorthand/index.js'
 import emailImportant from 'postcss-email-important'
-import zeroOutMargin from './plugins/postcss-zero-out-margin'
+import zeroOutMargin from './plugins/postcss-zero-out-margin/index.js'
 
 /** custom element expander */
-import elementExpander from './plugins/postcss-element-expander'
+import elementExpander from './plugins/postcss-element-expander/index.js'
 
 import mergeLonghand from 'postcss-merge-longhand'
 
