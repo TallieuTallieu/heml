@@ -1,4 +1,10 @@
-import { isPlainObject, escapeRegExp, isString, compact } from 'lodash';
+import lodash from 'lodash';
+const {
+  isPlainObject,
+  escapeRegExp,
+  isString,
+  compact
+} = lodash;
 
 /**
    * remap the elements var to looks like this

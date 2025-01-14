@@ -1,5 +1,14 @@
-import HEML, { createElement, transforms } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
-import { sum, max, isUndefined } from 'lodash';
+import utils from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
+import lodash from 'lodash';
+const {
+  sum,
+  max,
+  isUndefined
+} = lodash;
+const {
+  createElement,
+  transforms
+} = utils;
 export default createElement('row', {
   children: ['column'],
   rules: {
@@ -17,7 +26,7 @@ export default createElement('row', {
   },
   render(attrs, contents) {
     attrs.class += ' row';
-    return /*#__PURE__*/React.createElement("div", attrs, /*#__PURE__*/React.createElement("table", {
+    return utils.renderElement("div", attrs, utils.renderElement("table", {
       class: "row__table",
       width: "100%",
       align: "center",
@@ -26,7 +35,7 @@ export default createElement('row', {
       cellpadding: "0",
       cellspacing: "0",
       style: "table-layout: fixed;"
-    }, /*#__PURE__*/React.createElement("tr", {
+    }, utils.renderElement("tr", {
       class: "row__row"
     }, contents)));
   },

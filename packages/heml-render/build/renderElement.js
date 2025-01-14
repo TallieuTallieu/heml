@@ -1,12 +1,20 @@
-import isPromise from 'is-promise';
-import { isPlainObject, defaults, mapValues, castArray, compact, flattenDeep } from 'lodash';
-import createHtmlElement from './createHtmlElement';
+import isPromise from "is-promise";
+import lodash from "lodash";
+import createHtmlElement from "./createHtmlElement.js";
+const {
+  isPlainObject,
+  defaults,
+  mapValues,
+  castArray,
+  compact,
+  flattenDeep
+} = lodash;
 export default function (name, attrs, ...contents) {
   /** catch all promises in this content and wait for them to finish */
   if (contents.filter(isPromise).length > 0) {
-    return Promise.all(contents).then(contents => render(name, attrs, contents.join('')));
+    return Promise.all(contents).then(contents => render(name, attrs, contents.join("")));
   }
-  return render(name, attrs, contents.join(''));
+  return render(name, attrs, contents.join(""));
 }
 function render(name, attrs, contents) {
   if (!name || isPlainObject(name) && !name.render) {
@@ -16,10 +24,10 @@ function render(name, attrs, contents) {
     /** set the defaults and massage attribute values */
     attrs = defaults({}, attrs, name.defaultAttrs || {});
     attrs = mapValues(attrs, (value, name) => {
-      if (value === '' && name !== 'class' || value === 'true' || value === 'on') {
+      if (value === "" && name !== "class" || value === "true" || value === "on") {
         return true;
       }
-      if (value === 'false' || value === 'off') {
+      if (value === "false" || value === "off") {
         return false;
       }
       return value;
@@ -42,17 +50,17 @@ function render(name, attrs, contents) {
 
     /** 2. we want to return synchronously if we can */
     if (renderResults.filter(isPromise).length === 0) {
-      return compact(renderResults).join('');
+      return compact(renderResults).join("");
     }
 
     /** otherwise, combine the array of promises/strings into a single string */
     return Promise.all(renderResults).then(results => {
-      return compact(flattenDeep(results)).join('');
+      return compact(flattenDeep(results)).join("");
     });
   }
 
   /** if we have a regular ol element go ahead and convert it to a string */
-  if (attrs && attrs.class === '') {
+  if (attrs && attrs.class === "") {
     delete attrs.class;
   }
   if (attrs && attrs.class) {

@@ -1,9 +1,14 @@
 import { load } from "cheerio";
-import { difference, compact, first } from "lodash";
-import randomString from "crypto-random-string";
+import lodash from "lodash";
+import cryptoRandomString from "crypto-random-string";
 import htmlTags, { voidHtmlTags } from "html-tags";
+const {
+  difference,
+  compact,
+  first
+} = lodash;
 const wrappingHtmlTags = difference(htmlTags, voidHtmlTags);
-function parse(contents, options = {}) {
+export default function parse(contents, options = {}) {
   const {
     elements = [],
     cheerio: cheerioOptions = {}
@@ -55,7 +60,9 @@ function parse(contents, options = {}) {
       const css = $node.attr("style");
       $node.removeAttr("style");
       if (!id) {
-        id = `heml-${randomString(5)}`;
+        id = `heml-${cryptoRandomString({
+          length: 5
+        })}`;
         $node.attr("id", id);
       }
       return `#${id} {${css}}`;
@@ -64,4 +71,3 @@ function parse(contents, options = {}) {
   }
   return $;
 }
-export default parse;

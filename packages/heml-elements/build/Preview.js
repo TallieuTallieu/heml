@@ -1,5 +1,8 @@
-import HEML, { createElement } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
-import Meta from './Meta';
+import utils from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
+import Meta from './Meta.js';
+const {
+  createElement
+} = utils;
 export default createElement('preview', {
   parent: ['head'],
   unique: true,
@@ -9,7 +12,7 @@ export default createElement('preview', {
   },
   flush() {
     const preview = Meta.get('preview');
-    return preview ? /*#__PURE__*/React.createElement("div", {
+    return preview ? utils.renderElement("div", {
       class: "preview",
       style: "display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;"
     }, preview, '&nbsp;&zwnj;'.repeat(200 - preview.length)) : '';

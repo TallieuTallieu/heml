@@ -1,5 +1,8 @@
-import HEML, { createElement, transforms } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
-
+import utils from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
+const {
+  createElement,
+  transforms
+} = utils;
 const Table = createElement('table', {
   attrs: true,
   containsText: true,
@@ -12,7 +15,7 @@ const Table = createElement('table', {
   },
   render(attrs, contents) {
     attrs.class += ' table';
-    return /*#__PURE__*/React.createElement("table", attrs, contents);
+    return utils.renderElement("table", attrs, contents);
   }
 });
 const Tr = createElement('tr', {
@@ -25,7 +28,7 @@ const Tr = createElement('tr', {
   },
   render(attrs, contents) {
     attrs.class += ' tr';
-    return /*#__PURE__*/React.createElement("tr", attrs, contents);
+    return utils.renderElement("tr", attrs, contents);
   }
 });
 const Td = createElement('td', {
@@ -38,7 +41,7 @@ const Td = createElement('td', {
   },
   render(attrs, contents) {
     attrs.class += ' td';
-    return /*#__PURE__*/React.createElement("td", attrs, contents);
+    return utils.renderElement("td", attrs, contents);
   }
 });
 export { Table, Tr, Td };

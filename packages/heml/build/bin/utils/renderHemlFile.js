@@ -1,5 +1,5 @@
 import { readFile } from 'fs-extra';
-import heml from '../../';
+import heml from '../../index.js';
 async function renderHemlFile(filepath, options) {
   const contents = await readFile(filepath, 'utf8');
   const startTime = process.hrtime();

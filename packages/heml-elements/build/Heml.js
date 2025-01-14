@@ -1,5 +1,7 @@
-import HEML, { createElement } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
-
+import utils from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
+const {
+  createElement
+} = utils;
 export default createElement('heml', {
   unique: true,
   parent: [],
@@ -11,6 +13,6 @@ export default createElement('heml', {
     'xmlns:o': 'urn:schemas-microsoft-com:office:office'
   },
   render(attrs, contents) {
-    return [`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">`, /*#__PURE__*/React.createElement("html", attrs, contents)];
+    return [`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">`, utils.renderElement("html", attrs, contents)];
   }
 });

@@ -1,5 +1,7 @@
-import HEML, { createElement } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
-
+import utils from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
+const {
+  createElement
+} = utils;
 export default createElement('font', {
   parent: ['head'],
   children: false,
@@ -7,11 +9,11 @@ export default createElement('font', {
     href: ''
   },
   render(attrs, contents) {
-    return [`<!--[if !mso]><!-->`, /*#__PURE__*/React.createElement("link", {
+    return [`<!--[if !mso]><!-->`, utils.renderElement("link", {
       href: attrs.href,
       rel: "stylesheet",
       type: "text/css"
-    }), /*#__PURE__*/React.createElement("style", {
+    }), utils.renderElement("style", {
       type: "text/css"
     }, `@import url(${attrs.href});`), `<!--<![endif]-->`];
   }

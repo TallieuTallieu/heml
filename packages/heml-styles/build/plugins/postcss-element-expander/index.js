@@ -1,10 +1,10 @@
 'use strict';
 
 import postcss from 'postcss';
-import coerceElements from './coerceElements';
-import tagAliasSelectors from './tagAliasSelectors';
-import findDirectElementSelectors from './findDirectElementSelectors';
-import { replaceElementTagMentions, replaceElementPseudoMentions, expandElementRule } from './expanders';
+import coerceElements from './coerceElements.js';
+import tagAliasSelectors from './tagAliasSelectors.js';
+import findDirectElementSelectors from './findDirectElementSelectors.js';
+import { replaceElementTagMentions, replaceElementPseudoMentions, expandElementRule } from './expanders.js';
 
 /**
  * elements var looks like this before being coerced

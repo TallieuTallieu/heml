@@ -1,24 +1,27 @@
-import HEML, { createElement } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
-import Subject from './Subject';
-import Style from './Style';
+import utils from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
+import Subject from './Subject.js';
+import Style from './Style.js';
+const {
+  createElement
+} = utils;
 export default createElement('head', {
   unique: true,
   parent: ['heml'],
   attrs: [],
   async render(attrs, contents) {
-    return [/*#__PURE__*/React.createElement("head", null, " "), /*#__PURE__*/React.createElement("head", attrs, /*#__PURE__*/React.createElement("meta", {
+    return [utils.renderElement("head", null, " "), utils.renderElement("head", attrs, utils.renderElement("meta", {
       "http-equiv": "Content-Type",
       content: "text/html; charset=UTF-8"
-    }), /*#__PURE__*/React.createElement("meta", {
+    }), utils.renderElement("meta", {
       name: "viewport",
       content: "width=device-width, initial-scale=1.0"
-    }), /*#__PURE__*/React.createElement("meta", {
+    }), utils.renderElement("meta", {
       name: "x-apple-disable-message-reformatting"
     }), /* <!-- https://webdesign.tutsplus.com/tutorials/creating-a-future-proof-responsive-email-without-media-queries--cms-23919 --> */
-    `<!--[if !mso]><!-->`, /*#__PURE__*/React.createElement("meta", {
+    `<!--[if !mso]><!-->`, utils.renderElement("meta", {
       "http-equiv": "X-UA-Compatible",
       content: "IE=edge"
-    }), `<!--<![endif]-->`, /*#__PURE__*/React.createElement("style", {
+    }), `<!--<![endif]-->`, utils.renderElement("style", {
       type: "text/css",
       "data-embed": true
     }, `
@@ -30,7 +33,7 @@ export default createElement('head', {
         img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;}
         .ReadMsgBody, .ExternalClass { width: 100%; }
         .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass td, .ExternalClass div { line-height: 100%; }
-      `), /*#__PURE__*/React.createElement("style", {
+      `), utils.renderElement("style", {
       type: "text/css"
     }, `
         h1, h2, h3, h4, h5, h6 { margin: 20px 0; }
@@ -46,7 +49,7 @@ export default createElement('head', {
       li { text-indent: -1em; }
       table td { border-collapse: collapse; }
       </style>
-      <![endif]-->`, /*#__PURE__*/React.createElement("title", null, Subject.flush()), await Style.flush(), `<!-- content -->`, /* drop in the contents */
+      <![endif]-->`, utils.renderElement("title", null, Subject.flush()), await Style.flush(), `<!-- content -->`, /* drop in the contents */
     contents, /* https://litmus.com/community/discussions/151-mystery-solved-dpi-scaling-in-outlook-2007-2013 */
     `<!--[if gte mso 9]><xml>
        <o:OfficeDocumentSettings>

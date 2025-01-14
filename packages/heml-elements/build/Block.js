@@ -1,5 +1,11 @@
-import HEML, { createElement, transforms, cssGroups, condition } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
-import Style from './Style';
+import utils from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
+import Style from './Style.js';
+const {
+  createElement,
+  transforms,
+  cssGroups,
+  condition
+} = utils;
 const {
   trueHide,
   ieAlignFallback
@@ -38,7 +44,7 @@ export default createElement('block', {
   },
   render(attrs, contents) {
     attrs.class += ' block';
-    return /*#__PURE__*/React.createElement("div", attrs, condition('mso | IE', `<table class="block__table__ie" role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td>`), /*#__PURE__*/React.createElement("table", {
+    return utils.renderElement("div", attrs, condition('mso | IE', `<table class="block__table__ie" role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td>`), utils.renderElement("table", {
       class: "block__table",
       role: "presentation",
       border: "0",
@@ -46,14 +52,14 @@ export default createElement('block', {
       cellpadding: "0",
       cellspacing: "0",
       width: "100%"
-    }, /*#__PURE__*/React.createElement("tr", {
+    }, utils.renderElement("tr", {
       class: "block__row"
-    }, /*#__PURE__*/React.createElement("td", {
+    }, utils.renderElement("td", {
       class: "block__cell",
       width: "100%",
       align: "left",
       valign: "top"
-    }, contents))), condition('mso | IE', `</td></tr></table>`), /*#__PURE__*/React.createElement(Style, {
+    }, contents))), condition('mso | IE', `</td></tr></table>`), utils.renderElement(Style, {
       for: "block"
     }, `
           block {

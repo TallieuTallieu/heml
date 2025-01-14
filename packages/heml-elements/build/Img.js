@@ -1,10 +1,18 @@
-import HEML, { createElement, transforms } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
-import Style from './Style';
-import { omit, has } from 'lodash';
+import utils from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
+import Style from './Style.js';
+import lodash from 'lodash';
+const {
+  omit,
+  has
+} = lodash;
 import fs from 'fs-extra';
 import isAbsoluteUrl from 'is-absolute-url';
 import axios from 'axios';
 import sizeOf from 'image-size';
+const {
+  createElement,
+  transforms
+} = utils;
 export default createElement('img', {
   attrs: ['src', 'width', 'height', 'alt', 'infer', 'inline', 'style'],
   children: false,
@@ -26,7 +34,7 @@ export default createElement('img', {
     }
     attrs.class += ` ${isBlock ? 'img__block' : 'img__inline'}`;
     attrs.style = isBlock ? '' : 'display: inline-block;';
-    return [/*#__PURE__*/React.createElement("img", omit(attrs, 'inline', 'infer')), /*#__PURE__*/React.createElement(Style, {
+    return [utils.renderElement("img", omit(attrs, 'inline', 'infer')), utils.renderElement(Style, {
       for: "img"
     }, `
         .img__block {

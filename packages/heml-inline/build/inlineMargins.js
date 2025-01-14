@@ -1,4 +1,10 @@
-import { compact, first, last, nth } from 'lodash';
+import lodash from 'lodash';
+const {
+  compact,
+  first,
+  last,
+  nth
+} = lodash;
 
 /**
  * finds all the tables that are centered with margins

@@ -1,6 +1,15 @@
-import HEML, { createElement } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
+import utils from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
 import hemlstyles from '@tallieu_tallieu/heml-styles';
-import { castArray, isEqual, uniqWith, sortBy } from 'lodash';
+import lodash from 'lodash';
+const {
+  castArray,
+  isEqual,
+  uniqWith,
+  sortBy
+} = lodash;
+const {
+  createElement
+} = utils;
 const START_EMBED_CSS = `/*!***START:EMBED_CSS*****/`;
 const START_INLINE_CSS = `/*!***START:INLINE_CSS*****/`;
 let styleMap;

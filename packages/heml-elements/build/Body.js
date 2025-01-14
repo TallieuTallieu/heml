@@ -1,7 +1,12 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import HEML, { createElement, transforms, cssGroups } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
-import Style from './Style';
-import Preview from './Preview';
+import utils from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
+import Style from './Style.js';
+import Preview from './Preview.js';
+const {
+  createElement,
+  transforms,
+  cssGroups
+} = utils;
 const {
   background,
   padding,
@@ -28,9 +33,9 @@ export default createElement('body', {
   },
   async render(attrs, contents) {
     attrs.class += ' body';
-    return /*#__PURE__*/React.createElement("body", _extends({}, attrs, {
+    return utils.renderElement("body", _extends({}, attrs, {
       style: "margin: 0; width: 100%;"
-    }), Preview.flush(), /*#__PURE__*/React.createElement("table", {
+    }), Preview.flush(), utils.renderElement("table", {
       class: "bodyTable",
       role: "presentation",
       width: "100%",
@@ -39,14 +44,14 @@ export default createElement('body', {
       cellpadding: "0",
       cellspacing: "0",
       style: "margin: 0;"
-    }, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
+    }, utils.renderElement("tr", null, utils.renderElement("td", {
       class: "body__content",
       align: "left",
       width: "100%",
       valign: "top"
-    }, contents))), /*#__PURE__*/React.createElement("div", {
+    }, contents))), utils.renderElement("div", {
       style: "display:none; white-space:nowrap; font-size:15px; line-height:0;"
-    }, '&nbsp; '.repeat(30)), /*#__PURE__*/React.createElement(Style, {
+    }, '&nbsp; '.repeat(30)), utils.renderElement(Style, {
       for: "body"
     }, `
           body {

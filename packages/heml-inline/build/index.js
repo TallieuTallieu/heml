@@ -1,8 +1,8 @@
 import juice from 'juice';
-import inlineMargins from './inlineMargins';
-import fixWidthsFor from './fixWidthsFor';
-import removeProcessingIds from './removeProcessingIds';
-import preferMaxWidth from './preferMaxWidth';
+import inlineMargins from './inlineMargins.js';
+import fixWidthsFor from './fixWidthsFor.js';
+import removeProcessingIds from './removeProcessingIds.js';
+import preferMaxWidth from './preferMaxWidth.js';
 function inline($, options = {}) {
   const {
     juice: juiceOptions = {}

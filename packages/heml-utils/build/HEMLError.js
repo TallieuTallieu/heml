@@ -11,7 +11,8 @@ export default class HEMLError extends Error {
       this.$node = $node;
       this.selector = buildExactSelector($node);
     }
-    Error.captureStackTrace(this, HEMLError);
+
+    //Error.captureStackTrace(this, HEMLError)
   }
 }
 function buildExactSelector($node) {

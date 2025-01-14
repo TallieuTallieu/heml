@@ -1,5 +1,11 @@
-import { filter, difference, keyBy, first } from 'lodash';
-import renderElement from './renderElement';
+import lodash from 'lodash';
+import renderElement from './renderElement.js';
+const {
+  filter,
+  difference,
+  keyBy,
+  first
+} = lodash;
 export { renderElement };
 
 /**

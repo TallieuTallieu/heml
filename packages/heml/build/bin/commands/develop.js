@@ -7,9 +7,9 @@ import boxen from 'boxen';
 import gaze from 'gaze';
 import getPort from 'get-port';
 import chalk, { red as error, yellow as code } from 'chalk';
-import isHemlFile from '../utils/isHemlFile';
-import renderHemlFile from '../utils/renderHemlFile';
-import buildErrorPage from '../utils/buildErrorPage';
+import isHemlFile from '../utils/isHemlFile.js';
+import renderHemlFile from '../utils/renderHemlFile.js';
+import buildErrorPage from '../utils/buildErrorPage.js';
 const errorBlock = chalk.bgRed.white;
 const {
   log

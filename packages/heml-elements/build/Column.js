@@ -1,6 +1,11 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import HEML, { createElement, transforms, cssGroups } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
-import Style from './Style';
+import utils from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
+import Style from './Style.js';
+const {
+  createElement,
+  transforms,
+  cssGroups
+} = utils;
 const {
   background,
   box,
@@ -31,12 +36,12 @@ export default createElement('column', {
     attrs.class += ` column col-sm-${small}`;
     delete attrs.large;
     delete attrs.small;
-    return [/*#__PURE__*/React.createElement("td", _extends({}, attrs, {
+    return [utils.renderElement("td", _extends({}, attrs, {
       width: largeWidth,
       style: `width: ${largeWidth};`,
       align: "left",
       valign: "top"
-    }), contents.length === 0 ? '&nbsp;' : contents), small === large ? '' : /*#__PURE__*/React.createElement(Style, {
+    }), contents.length === 0 ? '&nbsp;' : contents), small === large ? '' : utils.renderElement(Style, {
       for: "column",
       "heml-embed": true
     }, `

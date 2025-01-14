@@ -11,7 +11,7 @@ export default class HEMLError extends Error {
       this.selector = buildExactSelector($node)
     }
 
-    Error.captureStackTrace(this, HEMLError)
+    //Error.captureStackTrace(this, HEMLError)
   }
 }
 

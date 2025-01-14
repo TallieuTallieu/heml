@@ -1,5 +1,13 @@
-import HEML, { createElement, transforms, cssGroups } from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
-import { merge } from 'lodash';
+import utils from '@tallieu_tallieu/heml-utils'; // eslint-disable-line no-unused-vars
+import lodash from 'lodash';
+const {
+  merge
+} = lodash;
+const {
+  createElement,
+  transforms,
+  cssGroups
+} = utils;
 const {
   margin,
   background,
@@ -34,7 +42,7 @@ function createTextElement(name, element = {}) {
     },
     render(attrs, contents) {
       attrs.class += ` ${classToAdd} ${name}`;
-      return /*#__PURE__*/React.createElement(Tag, attrs, contents);
+      return utils.renderElement(Tag, attrs, contents);
     }
   }, element));
 }
@@ -67,7 +75,7 @@ const A = createElement('a', {
   },
   render(attrs, contents) {
     attrs.class += ' a';
-    return /*#__PURE__*/React.createElement("a", attrs, /*#__PURE__*/React.createElement("span", {
+    return utils.renderElement("a", attrs, utils.renderElement("span", {
       class: "a__text"
     }, contents));
   }
