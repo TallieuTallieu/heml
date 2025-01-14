@@ -1,5 +1,7 @@
-import { HEMLError } from '@tallieu_tallieu/heml-utils'
-import { isArray, intersection, difference } from 'lodash'
+import utils from '@tallieu_tallieu/heml-utils'
+import lodash from 'lodash'
+const { isArray, intersection, difference } = lodash;
+const { HEMLError } = utils;
 
 export default function children ($node, { tagName, children: requiredChildren }) {
   if (isArray(requiredChildren)) {

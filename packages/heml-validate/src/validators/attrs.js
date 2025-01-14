@@ -1,5 +1,8 @@
-import { HEMLError } from '@tallieu_tallieu/heml-utils'
-import { difference } from 'lodash'
+import utils from '@tallieu_tallieu/heml-utils'
+import lodash from 'lodash'
+const { difference } = lodash;
+
+const { HEMLError } = utils;
 
 const nativeAttrs = [ 'id', 'class', 'dir', 'lang', 'accesskey', 'tabindex', 'title', 'translate' ]
 

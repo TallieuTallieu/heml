@@ -1,4 +1,4 @@
-import * as validatorsObject from './validators'
+import * as validatorsObject from './validators/index.js'
 
 const validators = Object.values(validatorsObject)
 

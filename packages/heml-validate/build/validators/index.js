@@ -1,5 +1,5 @@
-import attrs from './attrs';
-import children from './children';
-import parent from './parent';
-import unique from './unique';
+import attrs from './attrs.js';
+import children from './children.js';
+import parent from './parent.js';
+import unique from './unique.js';
 export { attrs, children, parent, unique };
