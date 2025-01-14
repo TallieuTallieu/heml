@@ -1,10 +1,10 @@
-import { renderElement } from '@tallieu_tallieu/heml-render';
-import cssGroups from 'css-groups';
-import createElement from './createElement';
-import HEMLError from './HEMLError';
-import transforms from './transforms';
-import condition from './condition';
-module.exports = {
+import { renderElement } from "@tallieu_tallieu/heml-render";
+import cssGroups from "css-groups";
+import createElement from "./createElement.js";
+import HEMLError from "./HEMLError.js";
+import transforms from "./transforms/index.js";
+import condition from "./condition.js";
+export default {
   createElement,
   renderElement,
   HEMLError,

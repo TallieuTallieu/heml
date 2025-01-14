@@ -1,4 +1,8 @@
-import { defaults, isFunction } from 'lodash';
+import lodash from 'lodash';
+const {
+  defaults,
+  isFunction
+} = lodash;
 const textRegex = /^(text(-([^-\s]+))?(-([^-\s]+))?|word-(break|spacing|wrap)|line-break|hanging-punctuation|hyphens|letter-spacing|overflow-wrap|tab-size|white-space|font-family|font-weight|font-style|font-variant|color)$/i;
 export default function (name, element) {
   if (!name || name.trim().length === 0) {
