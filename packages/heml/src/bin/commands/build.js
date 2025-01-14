@@ -1,8 +1,8 @@
 import path from 'path'
 import { writeFile } from 'fs-extra'
 import chalk, { red as error, yellow as code, blue, dim } from 'chalk'
-import isHemlFile from '../utils/isHemlFile'
-import renderHemlFile from '../utils/renderHemlFile'
+import isHemlFile from '../utils/isHemlFile.js'
+import renderHemlFile from '../utils/renderHemlFile.js'
 
 const errorBlock = chalk.bgRed.black
 const successBlock = chalk.bgGreen.black

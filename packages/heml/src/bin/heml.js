@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
 import cli from 'commander'
-import { first } from 'lodash'
-import develop from './commands/develop'
-import build from './commands/build'
-import { version } from '../../package'
+import lodash from 'lodash'
+const { first } = lodash;
+import develop from './commands/develop.js'
+import build from './commands/build.js'
+import { version } from '../../package.js'
 
 const commands = ['develop', 'build']
 const args = process.argv.slice(2)
