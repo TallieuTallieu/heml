@@ -1,7 +1,7 @@
 {
   "name": "@tallieu_tallieu/heml-inline",
   "type": "module",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "FORK: CSS inliner for HEML",
   "keywords": [
     "heml"
@@ -24,15 +24,6 @@
   "dependencies": {
     "juice": "^11.0.0",
     "lodash": "^4.17.21"
-  },
-  "resolutions": {
-    "@tallieu_tallieu/heml-utils": "portal:./../heml-utils",
-    "@tallieu_tallieu/heml-inline": "portal:./../heml-inline",
-    "@tallieu_tallieu/heml-elements": "portal:./../heml-elements",
-    "@tallieu_tallieu/heml-render": "portal:./../heml-render",
-    "@tallieu_tallieu/heml-styles": "portal:./../heml-styles",
-    "@tallieu_tallieu/heml-validate": "portal:./../heml-validate",
-    "@tallieu_tallieu/heml-parse": "portal:./../heml-parse"
   },
   "packageManager": "yarn@4.6.0"
 }
