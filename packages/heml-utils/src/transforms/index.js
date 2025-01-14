@@ -1,6 +1,6 @@
-import trueHide from './trueHide'
-import convertProp from './convertProp'
-import ieAlignFallback from './ieAlignFallback'
-import fallbackFor from './fallbackFor'
+import trueHide from './trueHide.js'
+import convertProp from './convertProp.js'
+import ieAlignFallback from './ieAlignFallback.js'
+import fallbackFor from './fallbackFor.js'
 
 export default { trueHide, convertProp, ieAlignFallback, fallbackFor }

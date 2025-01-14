@@ -1,4 +1,5 @@
-import { min, max } from 'lodash'
+import lodash from 'lodash'
+const { min, max } = lodash;
 
 export default class HEMLError extends Error {
   constructor (message, $node) {

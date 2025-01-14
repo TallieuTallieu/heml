@@ -1,6 +1,7 @@
 'use strict'
 
-import { isUndefined } from 'lodash'
+import lodash from 'lodash'
+const { isUndefined } = lodash;
 
 export default (type, containsTables = false) => (decl, originalRule) => {
   if (decl.value.trim().toLowerCase() === 'none') {
