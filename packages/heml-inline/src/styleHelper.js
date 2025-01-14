@@ -1,4 +1,5 @@
-import { compact } from 'lodash'
+import lodash from 'lodash'
+const { compact } = lodash;
 
 /**
  * Gets the value of a prop in a given inline style string

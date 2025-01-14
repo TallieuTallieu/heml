@@ -1,4 +1,4 @@
-import { setProp, getProp, removeProp } from './styleHelper'
+import { setProp, getProp, removeProp } from './styleHelper.js'
 
 export default function preferMaxWidth ($, selector) {
   $(selector).toNodes().forEach(($node) => {
