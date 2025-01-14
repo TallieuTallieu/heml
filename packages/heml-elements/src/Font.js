@@ -1,5 +1,5 @@
-import HEML, { createElement } from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
-
+import utils from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
+const { createElement } = utils;
 export default createElement('font', {
   parent: [ 'head' ],
   children: false,

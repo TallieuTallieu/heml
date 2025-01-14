@@ -1,6 +1,8 @@
-import HEML, { createElement } from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
-import Subject from './Subject'
-import Style from './Style'
+import utils from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
+import Subject from './Subject.js'
+import Style from './Style.js'
+
+const { createElement } = utils;
 
 export default createElement('head', {
   unique: true,

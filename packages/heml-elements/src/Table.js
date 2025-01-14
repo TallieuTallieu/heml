@@ -1,5 +1,5 @@
-import HEML, { createElement, transforms } from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
-
+import utils from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
+const { createElement, transforms } = utils;
 const Table = createElement('table', {
   attrs: true,
   containsText: true,

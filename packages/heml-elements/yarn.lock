@@ -9,29 +9,29 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tallieu_tallieu/heml-elements@workspace:."
   dependencies:
-    "@tallieu_tallieu/heml-styles": "npm:^1.0.5"
-    "@tallieu_tallieu/heml-utils": "npm:^1.0.6"
+    "@tallieu_tallieu/heml-styles": "npm:^1.0.7"
+    "@tallieu_tallieu/heml-utils": "npm:^1.0.8"
     axios: "npm:^1.7.9"
+    fs-extra: "npm:^11.2.0"
     image-size: "npm:^1.2.0"
     is-absolute-url: "npm:^4.0.1"
     lodash: "npm:^4.17.21"
   languageName: unknown
   linkType: soft
 
-"@tallieu_tallieu/heml-render@npm:^1.0.7":
-  version: 1.0.8
-  resolution: "@tallieu_tallieu/heml-render@npm:1.0.8"
+"@tallieu_tallieu/heml-render@portal:./../heml-render::locator=%40tallieu_tallieu%2Fheml-elements%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@tallieu_tallieu/heml-render@portal:./../heml-render::locator=%40tallieu_tallieu%2Fheml-elements%40workspace%3A."
   dependencies:
     html-tags: "npm:^4.0.0"
     is-promise: "npm:^4.0.0"
     lodash: "npm:^4.17.21"
-  checksum: 10c0/196270860409268aaa39cefe5c7c71638ef875a6685cb8377cdc55a313b5861ad92327d4cda10f73cfd7cb3fb7be8dc410eca6fd56ede8114fd8b3da3fa1d5b7
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"@tallieu_tallieu/heml-styles@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "@tallieu_tallieu/heml-styles@npm:1.0.5"
+"@tallieu_tallieu/heml-styles@portal:./../heml-styles::locator=%40tallieu_tallieu%2Fheml-elements%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@tallieu_tallieu/heml-styles@portal:./../heml-styles::locator=%40tallieu_tallieu%2Fheml-elements%40workspace%3A."
   dependencies:
     css-declaration-sorter: "npm:^2.1.0"
     css-shorthand-expand: "npm:^1.1.0"
@@ -63,20 +63,18 @@ __metadata:
     postcss-safe-parser: "npm:^3.0.1"
     postcss-shorthand-expand: "npm:^1.0.1"
     postcss-unique-selectors: "npm:^2.0.2"
-  checksum: 10c0/34221b1d498225ac19bcfcd66453b99c8c39e5e1e0d61413293ad6422ce5e739d0652408885954df73cfeacd7a31c635ddf35ced0f2e55d9efc6a4d5b36c04bd
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"@tallieu_tallieu/heml-utils@npm:^1.0.6":
-  version: 1.0.6
-  resolution: "@tallieu_tallieu/heml-utils@npm:1.0.6"
+"@tallieu_tallieu/heml-utils@portal:./../heml-utils::locator=%40tallieu_tallieu%2Fheml-elements%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@tallieu_tallieu/heml-utils@portal:./../heml-utils::locator=%40tallieu_tallieu%2Fheml-elements%40workspace%3A."
   dependencies:
-    "@tallieu_tallieu/heml-render": "npm:^1.0.7"
+    "@tallieu_tallieu/heml-render": "npm:^1.0.10"
     css-groups: "npm:^0.1.1"
     lodash: "npm:^4.17.21"
-  checksum: 10c0/7abc4d3c0d37d82eb24e72c323c630b1a65c70f421667a81ee28c203e672e64a5246fe206988a5caa4db8cbb97f323487a453e4f3d1c19798620fb74c1a24981
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "alphanum-sort@npm:^1.0.1, alphanum-sort@npm:^1.0.2":
   version: 1.0.2
@@ -351,10 +349,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fs-extra@npm:^11.2.0":
+  version: 11.2.0
+  resolution: "fs-extra@npm:11.2.0"
+  dependencies:
+    graceful-fs: "npm:^4.2.0"
+    jsonfile: "npm:^6.0.1"
+    universalify: "npm:^2.0.0"
+  checksum: 10c0/d77a9a9efe60532d2e790e938c81a02c1b24904ef7a3efb3990b835514465ba720e99a6ea56fd5e2db53b4695319b644d76d5a0e9988a2beef80aa7b1da63398
+  languageName: node
+  linkType: hard
+
 "gather-stream@npm:^1.0.0":
   version: 1.0.0
   resolution: "gather-stream@npm:1.0.0"
   checksum: 10c0/66f6f4d6371538cedd92e07720f5e21b45dfbecd2801bb2834c8c82854a2cd25c7fa89bfbdafb35ba99ee529b572ecd50ace96e20df365e5f2042dbc7d8c9858
+  languageName: node
+  linkType: hard
+
+"graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.2.0":
+  version: 4.2.11
+  resolution: "graceful-fs@npm:4.2.11"
+  checksum: 10c0/386d011a553e02bc594ac2ca0bd6d9e4c22d7fa8cfbfc448a6d148c59ea881b092db9dbe3547ae4b88e55f1b01f7c4a2ecc53b310c042793e63aa44cf6c257f2
   languageName: node
   linkType: hard
 
@@ -475,6 +491,19 @@ __metadata:
   version: 2.6.4
   resolution: "js-base64@npm:2.6.4"
   checksum: 10c0/95d93c4eca0bbe0f2d5ffe8682d9acd23051e5c0ad71873ff5a48dd46a5f19025de9f7b36e63fa3f02f342ae4a8ca4c56e7b590d7300ebb6639ce09675e0fd02
+  languageName: node
+  linkType: hard
+
+"jsonfile@npm:^6.0.1":
+  version: 6.1.0
+  resolution: "jsonfile@npm:6.1.0"
+  dependencies:
+    graceful-fs: "npm:^4.1.6"
+    universalify: "npm:^2.0.0"
+  dependenciesMeta:
+    graceful-fs:
+      optional: true
+  checksum: 10c0/4f95b5e8a5622b1e9e8f33c96b7ef3158122f595998114d1e7f03985649ea99cb3cd99ce1ed1831ae94c8c8543ab45ebd044207612f31a56fd08462140e46865
   languageName: node
   linkType: hard
 
@@ -1066,6 +1095,13 @@ __metadata:
   version: 2.0.0
   resolution: "uniqs@npm:2.0.0"
   checksum: 10c0/f244b158f6b3d30ddea2092c581fe9eb746d6db889a859fd0001e4b7566767bfcc53cdf11e6286f097bb130ebad71025709f41f2e4dd38e5c2f03ec28052baab
+  languageName: node
+  linkType: hard
+
+"universalify@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "universalify@npm:2.0.1"
+  checksum: 10c0/73e8ee3809041ca8b818efb141801a1004e3fc0002727f1531f4de613ea281b494a40909596dae4a042a4fb6cd385af5d4db2e137b1362e0e91384b828effd3a
   languageName: node
   linkType: hard
 

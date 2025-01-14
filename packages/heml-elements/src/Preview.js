@@ -1,6 +1,6 @@
-import HEML, { createElement } from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
-import Meta from './Meta'
-
+import utils from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
+import Meta from './Meta.js'
+const { createElement } = utils;
 export default createElement('preview', {
   parent: [ 'head' ],
   unique: true,

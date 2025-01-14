@@ -1,5 +1,6 @@
 {
   "name": "@tallieu_tallieu/heml-elements",
+  "type": "module",
   "version": "1.0.8",
   "description": "Core elements for HEML",
   "keywords": [
@@ -21,12 +22,22 @@
     "access": "public"
   },
   "dependencies": {
-    "@tallieu_tallieu/heml-styles": "^1.0.5",
-    "@tallieu_tallieu/heml-utils": "^1.0.6",
+    "@tallieu_tallieu/heml-styles": "^1.0.7",
+    "@tallieu_tallieu/heml-utils": "^1.0.8",
     "axios": "^1.7.9",
+    "fs-extra": "^11.2.0",
     "image-size": "^1.2.0",
     "is-absolute-url": "^4.0.1",
     "lodash": "^4.17.21"
+  },
+  "resolutions": {
+    "@tallieu_tallieu/heml-utils": "portal:./../heml-utils",
+    "@tallieu_tallieu/heml-inline": "portal:./../heml-inline",
+    "@tallieu_tallieu/heml-elements": "portal:./../heml-elements",
+    "@tallieu_tallieu/heml-render": "portal:./../heml-render",
+    "@tallieu_tallieu/heml-styles": "portal:./../heml-styles",
+    "@tallieu_tallieu/heml-validate": "portal:./../heml-validate",
+    "@tallieu_tallieu/heml-parse": "portal:./../heml-parse"
   },
   "packageManager": "yarn@4.6.0"
 }

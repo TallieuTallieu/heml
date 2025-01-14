@@ -1,6 +1,7 @@
-import HEML, { createElement, transforms } from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
-import { sum, max, isUndefined } from 'lodash'
-
+import utils from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
+import lodash from 'lodash'
+const { sum, max, isUndefined } = lodash;
+const { createElement, transforms } = utils;
 export default createElement('row', {
   children: [ 'column' ],
 

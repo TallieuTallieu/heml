@@ -1,6 +1,7 @@
-import HEML, { createElement, transforms, cssGroups } from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
-import { merge } from 'lodash'
-
+import utils from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
+import lodash from 'lodash'
+const { merge } = lodash;
+const { createElement, transforms, cssGroups } = utils;
 const {
   margin, background, border, borderRadius, text, font
 } = cssGroups

@@ -1,6 +1,6 @@
-import HEML, { createElement, transforms, cssGroups } from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
-import Style from './Style'
-
+import utils from '@tallieu_tallieu/heml-utils' // eslint-disable-line no-unused-vars
+import Style from './Style.js'
+const { createElement, transforms, cssGroups } = utils;
 const {
   background,
   box,
