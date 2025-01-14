@@ -1,5 +1,6 @@
 {
   "name": "@tallieu_tallieu/heml-render",
+  "type": "module",
   "version": "1.0.10",
   "description": "FORK: Renderer for HEML",
   "keywords": [
@@ -19,6 +20,15 @@
   "main": "build/index.js",
   "publishConfig": {
     "access": "public"
+  },
+  "resolutions": {
+    "@tallieu_tallieu/heml-utils": "portal:./../heml-utils",
+    "@tallieu_tallieu/heml-inline": "portal:./../heml-inline",
+    "@tallieu_tallieu/heml-elements": "portal:./../heml-elements",
+    "@tallieu_tallieu/heml-render": "portal:./../heml-render",
+    "@tallieu_tallieu/heml-styles": "portal:./../heml-styles",
+    "@tallieu_tallieu/heml-validate": "portal:./../heml-validate",
+    "@tallieu_tallieu/heml-parse": "portal:./../heml-parse"
   },
   "dependencies": {
     "html-tags": "^4.0.0",

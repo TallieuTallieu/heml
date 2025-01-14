@@ -1,4 +1,4 @@
-import stringifyAttributes from './stringifyAttributes'
+import stringifyAttributes from './stringifyAttributes.js'
 import {voidHtmlTags} from 'html-tags';
 
 export default function createHtmlElement ({ name, attrs, contents = ' ' }) {
